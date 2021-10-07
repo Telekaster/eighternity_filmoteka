@@ -1,7 +1,28 @@
 // Здесь первичная геометрия
-
-body {
+.container {
+  margin: auto;
 }
 
-.container {
+@media screen and (max-width: 767px) {
+  .container {
+    width: 320px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 1024px;
+    padding-left: 75px;
+    padding-right: 75px;
+  }
 }
