@@ -60,7 +60,15 @@ padding-right: 75px;
  
 }
 
-
+%title{
+  font-weight: 500;
+    font-size: 20px;
+    font-style: normal;
+    line-height: 1.17;
+    margin-bottom: 20px;
+    color: $txtColorDark;
+    font-family: $mainFont;
+}
 
 // .container {
 //   margin: auto;
