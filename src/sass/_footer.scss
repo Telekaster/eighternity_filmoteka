@@ -1,0 +1,44 @@
+.footer {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: $footer-background-color;
+  color: $footer-text-color;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.19;
+  font-style: normal;
+  font-weight: normal;
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 28px;
+
+  &__rights {
+    margin: 0;
+  }
+  &__info {
+    margin: 0;
+  }
+
+  &__img {
+    display: inline-block;
+  }
+  &__link {
+    color: $footer-text-color;
+    text-decoration: underline;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 14px; //только в моб.версии
+    line-height: 1.14; //только в моб.версии
+    &__rights {
+      margin-bottom: 10px; //только в моб.версии
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &__box {
+      display: flex;
+    }
+  }
+}
