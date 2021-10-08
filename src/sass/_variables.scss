@@ -1,4 +1,13 @@
 // Здесь переменные
+$txtColorDark: #000000;
+$genreColor: #ff6b08;
+
+
 $mainFont: Roboto, Arial;
-$titleColor: #000000;
-$genreColor: #ff6b08; ;
+
+
+$breakpoints: (
+    mobile: 420px,
+    tablet: 768px,
+    laptop: 1024px);
+
