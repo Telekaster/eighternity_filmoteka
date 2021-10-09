@@ -1,6 +1,6 @@
 export default function takeValue(value, loginAcceptButton) {
                 if (value !== '') {
-                loginAcceptButton.removeAttribute('disabled');
+                loginAcceptButton.classList.remove('visually-hidden');
                 return value.toLowerCase();
                 };
 };
