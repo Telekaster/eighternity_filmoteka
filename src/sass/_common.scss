@@ -1,0 +1,79 @@
+//===================MOVIES======================
+.movies {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+  margin-top: -20px;
+
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -20px;
+    margin-top: -20px;
+  }
+}
+
+.movies__item {
+  flex-basis: calc(100% / 3 - 20px);
+  margin-left: 20px;
+  margin-top: 20px;
+
+  @media screen and (max-width: 767px) {
+    flex-basis: calc(100% / 1 - 20px);
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc(100% / 2 - 20px);
+  }
+  @media screen and (min-width: 1024px) {
+    display: block;
+    flex-basis: calc(100% / 3 - 20px);
+  }
+}
+
+//===============FONTS================
+.movie__card {
+  font-family: $mainFont;
+}
+
+.movie__title {
+  color: $txtColorDark;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.movie__genre,
+.movie__year {
+  color: $genreColor;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.movie__year::before {
+  content: '|';
+  width: 1px;
+  height: 11px;
+  margin-right: 2px;
+  color: $genreColor;
+}
+
+.movie__label {
+  margin-top: 10px;
+}
