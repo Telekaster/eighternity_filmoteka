@@ -1,56 +1,45 @@
 //===================MOVIES======================
-.movies {
+
+.movies__section {
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -20px;
-  margin-top: -20px;
-
-  @media screen and (max-width: 767px) {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  @media screen and (min-width: 768px) {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  @media screen and (min-width: 1024px) {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -20px;
-    margin-top: -20px;
+  @media screen and (min-width: 640px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
 
-.movies__item {
-  flex-basis: calc(100% / 3 - 20px);
-  margin-left: 20px;
-  margin-top: 20px;
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 
-  @media screen and (max-width: 767px) {
-    flex-basis: calc(100% / 1 - 20px);
+.movies__item {
+  flex: 1 1 100%; // 1 across at mobile
+
+  @media screen and (min-width: 640px) {
+    flex-basis: calc((100% / 2) - 1rem); // 2 across at tabletish
   }
-  @media screen and (min-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    flex-basis: calc(100% / 2 - 20px);
-  }
+
   @media screen and (min-width: 1024px) {
-    display: block;
-    flex-basis: calc(100% / 3 - 20px);
+    flex-basis: calc((100% / 3) - 2rem); // 3 across at desktop
   }
 }
 
 //===============FONTS================
 .movie__card {
   font-family: $mainFont;
+  display: flex;
+  flex-direction: column;
 }
 
-.movie__title {
+.movie__img {
+  max-width: 100%;
+}
+
+.movie__name {
   color: $txtColorDark;
   font-weight: 500;
   font-size: 12px;
