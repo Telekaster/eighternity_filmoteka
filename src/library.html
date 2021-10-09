@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+      integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="images/film.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header-lib">
+      <div class="header__container">
+        <div class="header__top">
+          <a href="" class="logo logo__link">
+            <svg class="logo__icon">
+              <use href="./images/sprite.svg#icon-film"></use>
+            </svg>
+            <span class="logo__txt">Filmoteka </span>
+          </a>
+          <nav class="nav">
+            <a class="nav__link" href="./index.html">home</a>
+            <a class="nav__link current" href="./library.html">my library</a>
+          </nav>
+        </div>
+        <div class="header-lib__btn-set">
+          <button class="header-lib__btn current header-lib__btn--watched" type="button">
+            watched
+          </button>
+          <button class="header-lib__btn header-lib__btn--" type="button">queue</button>
+        </div>
+
+        <p class="alert-answer"></p>
+      </div>
+    </header>
+    <!-- <script src="./index.js"></script> -->
+  </body>
+</html>
