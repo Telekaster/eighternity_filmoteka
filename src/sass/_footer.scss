@@ -10,20 +10,25 @@
   line-height: 1.19;
   font-style: normal;
   font-weight: normal;
-  margin: 0;
+  // margin: 0, auto;
   padding-top: 30px;
   padding-bottom: 28px;
-
   &__rights {
     margin: 0;
   }
   &__info {
-    margin: 0;
+    margin-left: 4px;
   }
-
   &__img {
     display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
   }
+  #heart {
+    width: 20px;
+    height: 18px;
+  }
+
   &__link {
     color: $footer-text-color;
     text-decoration: underline;
@@ -35,7 +40,6 @@
       margin-bottom: 10px; //только в моб.версии
     }
   }
-
   @media screen and (min-width: 768px) {
     &__box {
       display: flex;
