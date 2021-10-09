@@ -4,7 +4,8 @@
 //оптимизировать картинки
 
 .header {
-  padding: 46px 0;
+  // padding: 46px 0; //<------ Дело рук Олега
+  padding-top: 46px; //<------ Дело рук Олега
   background-color: $txtColorDark;
   color: $txtColorWhite;
   min-height: 230px;
@@ -91,11 +92,25 @@
 }
 .nav {
   display: flex;
+  align-items: center; //<------ Дело рук Олега
   width: 100%;
-  max-width: 143px;
+  // max-width: 143px;
+  max-width: 180px; //<------ Дело рук Олега
   justify-content: space-between;
   column-gap: 10px;
 }
+
+// Дело рук Олега-------------------
+.log_in__button {
+  @extend .nav__link;
+  @extend .btn;
+  background: none;
+
+  // width: 15px;
+  // height: 15px;
+}
+// ------------------------------------
+
 .nav__link {
   @extend .link;
   position: relative;
