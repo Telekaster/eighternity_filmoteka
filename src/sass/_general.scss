@@ -44,7 +44,7 @@ a:not([class]) {
 }
 
 img {
-  max-width: 100%;
+  // max-width: 100%;
   display: block;
   height: auto;
 }
@@ -99,7 +99,6 @@ select {
   font-size: 20px;
   font-style: normal;
   line-height: 1.17;
-  margin-bottom: 20px;
   color: $txtColorDark;
   font-family: $mainFont;
 }
