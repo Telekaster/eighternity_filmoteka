@@ -1,23 +1,28 @@
 <header class="header">
   <div class="header__container">
+    <h3 class="login__greetings visually-hidden"></h3> <!-- Дело рук Олега -->
     <div class="header__top">
       <a href="" class="logo logo__link">
         <svg class="logo__icon">
           <use href="./images/sprite.svg#icon-film"></use>
         </svg>
+        <span class="logo__txt">Filmoteka </span>
       </a>
       <nav class="nav">
-        <a class="nav__link" href="#">home</a>
-        <a class="nav__link" href="#">my library</a>
+        <a class="nav__link current" href="#">home</a>
+        <a class="nav__link" href="">my library</a>
+        <button type="button" class="log_in__button">Log in</button> <!-- Дело рук Олега -->
       </nav>
     </div>
-    <form action="search">
+    <form class="search" action="search">
       <input class="search__input" type="text" placeholder="Search" />
-      <button type="submit" class="search__btn">
+      <button class="search__btn" type="submit">
         <svg class="search__btn-icon">
           <use href="./images/sprite.svg#icon-search"></use>
         </svg>
       </button>
     </form>
+    <p class="alert-answer"></p>
   </div>
+  <include src="./partials/login.html"></include>
 </header>
