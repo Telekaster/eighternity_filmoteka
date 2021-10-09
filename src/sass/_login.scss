@@ -36,15 +36,19 @@
   padding: 0;
   color: $txtColorWhite;
   outline: none;
-
+  font-family: $mainFont;
   font-size: 14px;
   line-height: 1.14;
+  align-items: center;
+  color: $txtColorWhite;
   &::placeholder {
     color: $txtColorWhite;
   }
 }
 
 .login__accept_btn {
+  @extend .btn;
+  width: 100px;
   margin-top: 10px;
   background: $genreColor;
   border-radius: 5px;
