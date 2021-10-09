@@ -41,9 +41,12 @@
       }
       @media screen and (min-width: 1024px) {
         width: 882px;
+
       }
 }
-
+.movie__infolist{
+  margin-bottom: 20px;
+}
 .modal__btn{
     position: absolute;
     top: 18px;
@@ -54,27 +57,52 @@
     height: 20px;
     background-color: #fff;
     fill: #000000;
+    @media screen and (min-width: 768px){
+      height: 25px;
+    width: 25px;
+    top: 14px;
+    right: 26px;
+    }
 }
 .modal__svg{
     fill: currentColor;
     height: 18px;
     width: 18px;
+    @media screen and (min-width: 768px){
+      height: 25px;
+    width: 25px;
+    }
 }
 
 .modal__poster{
-    width: 240px;
+  max-width: 240px;
     margin-bottom: 30px;
+    
+    @media screen and (min-width: 768px){
+      max-width: 264px;
+      margin-right: 32px;
+    }
+    @media screen and (min-width: 1024px){
+      max-width: 396px;
+      height: 480px;
+      margin-right: 30px;
+    }
 }
 .modal__info{
 display: flex;
 flex-direction: column;
 padding: 48px 20px 41px 20px;
+@media screen and (min-width: 768px){
+ flex-direction: row;
+ padding: 42px 30px 40px 28px;
+}
+
 }
 .about-title{
-    @extennd %title;
+    @extend %title;
     font-size: 12px;
-    font-style: 400;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 .about-text{
     font-weight: 500;
@@ -84,31 +112,30 @@ padding: 48px 20px 41px 20px;
     margin-bottom: 21px;
     color: $txtColorDark;
 }
-.movie__infolist{
-    margin-bottom: 20px;
-}
-.movie__infolist-text{
-    font-weight: 500;
+.movie__infolist-item{
+  display: flex;
+  font-weight: 500;
     font-size: 12px;
     font-style: normal;
     line-height: 1.33;
-    color: rgba(140, 140, 140, 1);
+    color: $txtColorGrey;
+  
+}
+.movie__infolist-item:not(:last-child){
+  margin-bottom: 10px;
 }
 .modal-btn__list{
     display: flex;
+    align-items: center;
 }
 .modal-btn--link:not(:last-child) {
     margin-right: 15px;
   }
-
-.btn-watched{
-
-}
 .modal-btn{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 113px;
+    width: 70px;
     height: 44px;
     padding: 14px 10px;
     font-weight: 500;
@@ -124,9 +151,55 @@ padding: 48px 20px 41px 20px;
         color: $primery-bg-color;
         border: none;
     }
+    @media screen and (min-width: 768px){
+      width: 80px;
+    }
+    @media screen and (min-width: 1024px){
+      width: 125px;
+    }
 }
-.movie__title{
+.modal__title{
     @extend %title;
+    text-transform: uppercase;
 margin-bottom: 20px;
+@media screen and (min-width: 1024px) {
+font-size: 30px;
+line-height: 1.2;
+}
 
+}
+.vote{
+  @extend %title;
+display: inline-block;
+font-size: 12px;
+margin-left: 41px;
+margin-right: 5px;
+padding: 1px 10px;
+border-radius: 5px;
+  background-color: $accent-color;
+  color: $primery-bg-color;
+}
+.vote--second{
+  margin-left: 5px;
+  color: $txtColorDark;
+background-color: #F7F7F7;
+}
+.popularity{
+  @extend %title;
+  font-size: 12px;
+  margin-left: 53px;
+}
+.original-title{
+  @extend %title;
+  font-size: 12px;
+  margin-left: 39px;
+  text-transform: uppercase;
+}
+.genre{
+  @extend %title;
+  font-size: 12px;
+  margin-left: 76px;
+}
+.trailer-btn{
+ 
 }
