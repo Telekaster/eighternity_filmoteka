@@ -5,6 +5,7 @@ import loginWindowOpen from './js/login_window';
 import closeLoginWindow from './js/login_close_window';
 import takeValue from './js/login_takeValue';
 import sendLogin from './js/login_sendLogin';
+import submitByEnter from './js/login_submit_by_enter';
 
 
 // Переменные________________
@@ -13,10 +14,9 @@ const search = document.querySelector('.search');
 const loginWindow = document.querySelector('.login__section');
 const loginClose = document.querySelector('.login__close_btn');
 const loginAcceptButton = document.querySelector('.login__accept_btn');
-const input = document.querySelector('.login__input');
+const loginInput = document.querySelector('.login__input');
 const greetingText = document.querySelector('.login__greetings');
 let nameValue = '';
-
 const user = {
     name:'',
 }
@@ -25,8 +25,9 @@ const user = {
 // Слушатели событий_________
 loginButton.addEventListener('click', () => { loginWindowOpen(search, loginWindow, loginAcceptButton) });
 loginClose.addEventListener('click', () => { closeLoginWindow(search, loginWindow) });
-input.addEventListener('input', (evt) => { return nameValue = takeValue(evt.target.value, loginAcceptButton) });
-loginAcceptButton.addEventListener('click', () => { sendLogin(nameValue, input, user, greetingText, loginWindow, search) });
+loginInput.addEventListener('input', (evt) => { return nameValue = takeValue(evt.target.value, loginAcceptButton) });
+loginAcceptButton.addEventListener('click', () => { sendLogin(nameValue, loginInput, user, greetingText, loginWindow, search) });
+window.addEventListener('keydown', (evt) => { submitByEnter(loginAcceptButton, evt, nameValue, loginInput, user, greetingText, loginWindow, search) });
 
 
 //Остальной код_______________
