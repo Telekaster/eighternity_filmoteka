@@ -60,7 +60,7 @@ fetch(url)
             
             <div class="movie__label">
             <h3 class="movie__name">${title || name}</h3>
-             <p class="movie__genre">Жанр<span class="movie__year">${first_air_date || '2021'}</span></p>
+             <p class="movie__genre">Жанр <span class="movie__year">${first_air_date || '2021'}</span></p>
             </div>
             </div>
             </li>`
