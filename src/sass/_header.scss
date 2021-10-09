@@ -1,5 +1,4 @@
-//цвет ввода текста
-//подчеркивание
+
 // слушатели
 //оптимизировать картинки
 
@@ -51,6 +50,9 @@
 }
 .header__container {
   @extend .container;
+  font-weight: 500;
+font-size: 12px;
+
 }
 .header__top {
   display: flex;
@@ -60,8 +62,7 @@
 }
 .logo__link {
   @extend .link;
-  // width: 24px;
-  // height: 24px;
+
   display: flex;
   align-items: center;
   column-gap: 10px;
@@ -85,7 +86,6 @@
     overflow: hidden;
   }
 
-  font-weight: 500;
   font-size: 30px;
   line-height: 1.17;
 }
@@ -99,11 +99,33 @@
 .nav__link {
   @extend .link;
   position: relative;
-  font-weight: 500;
-  font-size: 12px;
+ 
   line-height: 1.17;
 
   text-transform: uppercase;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -3px;
+
+      width: 0;
+      height: 3px;
+      background-color: $genreColor;
+
+transition: width $timing-function $transition-duration;
+  }
+
+&:hover,
+&:focus{
+    &::after{
+ 
+  width: 100%;
+     }
+}
+
+
 }
 .nav__link.current::after {
   content: '';
