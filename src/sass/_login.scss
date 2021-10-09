@@ -1,11 +1,7 @@
 .login__section {
   @extend .container;
-  @media screen and (max-width: 767px) {
-    width: 100%;
-    // border: red 1px solid;
-    margin-top: 0px;
-    text-align: center;
-  }
+  width: 100%;
+  text-align: center;
 }
 
 .login__close_btn {
@@ -17,11 +13,17 @@
 }
 
 .login__close_icon {
-  stroke: white;
+  stroke: $txtColorWhite;
 }
 
 .login__form {
   border-bottom: solid 0.5px white;
+  width: 150px;
+  margin: auto;
+}
+
+.login__form_hidden {
+  border-bottom: none;
   width: 150px;
   margin: auto;
 }
@@ -44,19 +46,29 @@
 
 .login__accept_btn {
   margin-top: 10px;
-  background: #ff6b01;
+  background: $genreColor;
   border-radius: 5px;
-
-  font-family: Roboto;
-  font-style: normal;
+  font-family: $mainFont;
   font-weight: 500;
   font-size: 12px;
-  line-height: 16px;
-  /* or 133% */
-
+  line-height: 1.33;
   align-items: center;
   text-align: center;
   text-transform: uppercase;
+  color: $txtColorWhite;
+}
 
-  color: #ffffff;
+.login__greetings {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  font-family: $mainFont;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.75;
+  color: rgb(21, 221, 21);
+
+  @media screen and (max-width: 767px) {
+    transform: translate(50%, 100%);
+  }
 }
