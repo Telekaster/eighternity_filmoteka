@@ -1,6 +1,7 @@
 // Импорты___________________
 import './sass/main.scss';
 import './js/footer'
+import refs from './js/refs';
 import loginWindowOpen from './js/login_window';
 import closeLoginWindow from './js/login_close_window';
 import takeValue from './js/login_takeValue';
@@ -9,13 +10,10 @@ import submitByEnter from './js/login_submit_by_enter';
 
 
 // Переменные________________
-const loginButton = document.querySelector('.log_in__button');
-const search = document.querySelector('.search');
-const loginWindow = document.querySelector('.login__section');
-const loginClose = document.querySelector('.login__close_btn');
-const loginAcceptButton = document.querySelector('.login__accept_btn');
-const loginInput = document.querySelector('.login__input');
-const greetingText = document.querySelector('.login__greetings');
+
+const { loginButton, search, loginWindow, loginClose, loginAcceptButton, loginInput, greetingText } = refs();
+
+
 let nameValue = '';
 
 // Добавила Лиля________________
