@@ -1,28 +1,54 @@
 <header class="header">
-  <div class="header__container">
-    <h3 class="login__greetings visually-hidden"></h3> <!-- Дело рук Олега -->
-    <div class="header__top">
-      <a href="" class="logo logo__link">
-        <svg class="logo__icon">
-          <use href="./images/sprite.svg#icon-film"></use>
-        </svg>
-        <span class="logo__txt">Filmoteka </span>
-      </a>
-      <nav class="nav">
-        <a class="nav__link current" href="#">home</a>
-        <a class="nav__link" href="">my library</a>
-        <button type="button" class="log_in__button">Log in</button> <!-- Дело рук Олега -->
-      </nav>
+  <div class="header__main slide active" id="headerMain">
+    <div class="header__container">
+      <h3 class="login__greetings visually-hidden"></h3>
+      <!-- Дело рук Олега -->
+      <div class="header__top">
+        <a href="" class="logo logo__link">
+          <svg class="logo__icon">
+            <use href="./images/sprite.svg#icon-film"></use>
+          </svg>
+          <span class="logo__txt">Filmoteka </span>
+        </a>
+        <nav class="nav">
+          <button type="button" class="nav__btn current">home</button>
+          <button type="button" class="nav__btn" id="btn-lib-open">my library</button>
+          <button type="button" class="log_in__button" id="btn-login-open">Log in</button>
+          <!-- Дело рук Олега -->
+        </nav>
+      </div>
+      <form class="search" action="search">
+        <input class="search__input" type="text" placeholder="Search" />
+        <button class="search__btn" type="submit">
+          <svg class="search__btn-icon">
+            <use href="./images/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+      <p class="alert-answer"></p>
     </div>
-    <form class="search" action="search">
-      <input class="search__input" type="text" placeholder="Search" />
-      <button class="search__btn" type="submit">
-        <svg class="search__btn-icon">
-          <use href="./images/sprite.svg#icon-search"></use>
-        </svg>
-      </button>
-    </form>
-    <p class="alert-answer"></p>
+    <include src="./partials/login.html"></include>
   </div>
-  <include src="./partials/login.html"></include>
+  <div class="header-lib slide" id="headerLib">
+    <div class="header__container">
+      <div class="header__top">
+        <a href="" class="logo logo__link">
+          <svg class="logo__icon">
+            <use href="./images/sprite.svg#icon-film"></use>
+          </svg>
+          <span class="logo__txt">Filmoteka </span>
+        </a>
+        <nav class="nav nav--lib">
+          <button type="button" class="nav__btn" id="btn-home-open">home</button>
+          <button type="button" class="nav__btn current">my library</button>
+        </nav>
+      </div>
+      <div class="header-lib__btn-set">
+        <button class="header-lib__btn current" type="button" id="watched__btn">watched</button>
+        <button class="header-lib__btn" type="button" id="queue__btn">queue</button>
+      </div>
+
+      <p class="alert-answer"></p>
+    </div>
+  </div>
 </header>

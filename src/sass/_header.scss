@@ -1,10 +1,25 @@
 
 // слушатели
 //оптимизировать картинки
+.header{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 
-.header {
-  // padding: 46px 0; //<------ Дело рук Олега
-  padding-top: 20px; //<------ Дело рук Олега
+}
+// .header__main.current{
+// display: block;
+// }
+.header__main {
+  display: none;
+  padding: 46px 0; 
+
+  position: relative;
+  animation: 0.3s ease-in-out;
+
+
+
+  // padding-top: 20px; //<------ Дело рук Олега
   background-color: $txtColorDark;
   color: $txtColorWhite;
   min-height: 230px;
@@ -94,7 +109,7 @@ font-size: 12px;
   display: flex;
   align-items: center; //<------ Дело рук Олега
   width: 100%;
-  // max-width: 143px;
+  
   max-width: 180px; //<------ Дело рук Олега
   justify-content: space-between;
   column-gap: 10px;
@@ -102,7 +117,7 @@ font-size: 12px;
 
 // Дело рук Олега-------------------
 .log_in__button {
-  @extend .nav__link;
+  @extend .nav__btn;
   @extend .btn;
   background: none;
 
@@ -111,12 +126,12 @@ font-size: 12px;
 }
 // ------------------------------------
 
-.nav__link {
-  @extend .link;
+.nav__btn {
+  @extend .btn;
   position: relative;
- 
+ color: $txtColorWhite;
   line-height: 1.17;
-
+background: none;
   text-transform: uppercase;
 
     &::after {
@@ -142,7 +157,7 @@ transition: width $timing-function $transition-duration;
 
 
 }
-.nav__link.current::after {
+.nav__btn.current::after {
   content: '';
   display: block;
   position: absolute;
@@ -185,3 +200,195 @@ transition: width $timing-function $transition-duration;
   width: 12px;
   height: 12px;
 }
+
+
+
+
+
+// .header-lib.current{
+//   display: block;
+// }
+
+.header-lib {
+  display: none;
+
+ position: relative;
+ animation: 0.3s ease-in-out;
+
+  padding: 46px 0;
+  background-color: $txtColorDark;
+  color: $txtColorWhite;
+  min-height: 230px;
+
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/mobile/header-library-mob.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(../images/mobile/header-library-mob@2x.png);
+  }
+
+  @media screen and(min-width: map-get($breakpoints, mobile)+20) {
+    padding: 41px 0;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(../images/tablet/header-library-tablet@1x.png);
+
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/tablet/header-library-tablet@2x.png);
+    }
+  }
+
+  @media screen and(min-width: map-get($breakpoints, tablet)+50) {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(../images/desktop/header-library-desk@1x.png);
+
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/desktop/header-library-desk@2x.png);
+    }
+  }
+}
+
+.nav.nav--lib{
+max-width: 143px;
+}
+
+
+
+.header-lib__btn-set {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+
+  @media screen and (min-width: map-get($breakpoints, tablet)) {
+    column-gap: 15px;
+  }
+}
+
+
+
+.header-lib__btn {
+  @extend .btn;
+  margin-top: 49px;
+
+  width: 100%;
+  max-width: 130px;
+  min-height: 30px;
+  
+
+  line-height: 1.33;
+  text-transform: uppercase;
+  color: $txtColorWhite;
+
+
+  border-radius: 5px;
+  background-color: transparent;
+  border: solid 1px $txtColorWhite;
+
+
+  transition: background-color $timing-function $transition-duration,
+    border-color $timing-function $transition-duration,
+    box-shadow $timing-function $transition-duration;
+
+  @media screen and (min-width: 250px) {
+    min-height: 44px;
+  }
+
+  @media screen and (min-width: map-get($breakpoints, tablet)) {
+    max-width: 136px;
+  }
+}
+
+.header-lib__btn:hover,
+.header-lib__btn:focus {
+  outline: none;
+  background-color: $genreColor;
+  border: solid 1px $genreColor;
+  box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6));
+}
+
+.header-lib__btn:active {
+  outline: none;
+  background-color: #973d00;
+  border: solid 1px #973d00;
+  box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6));
+}
+
+// .header-lib__btn.current{
+//     background-color: $genreColor;
+//     border: solid 1px $genreColor;
+//    box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6)); 
+// }
+
+
+// .welcome__slide {
+//   display: none;
+//   position: relative;
+//   animation: 0.3s ease-in-out;
+// }
+
+.slide.active,
+.slide.next {
+  display: block;
+  width: 100%;
+  // height: 100%;
+}
+
+.slide.next {
+  position: absolute;
+  top: 0;
+  // width: 100%;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+
