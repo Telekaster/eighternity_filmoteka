@@ -1,6 +1,7 @@
 // Импорты___________________
 import './sass/main.scss';
-import './js/footer'
+import './js/open-library';
+import './js/footer';
 import refs from './js/refs';
 import loginWindowOpen from './js/login_window';
 import closeLoginWindow from './js/login_close_window';
