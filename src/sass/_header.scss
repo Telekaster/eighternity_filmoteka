@@ -1,4 +1,3 @@
-
 // слушатели
 //оптимизировать картинки
 .header{
@@ -67,8 +66,7 @@
 .header__container {
   @extend .container;
   font-weight: 500;
-font-size: 12px;
-
+  font-size: 12px;
 }
 .header__top {
   display: flex;
@@ -120,42 +118,36 @@ font-size: 12px;
   @extend .nav__btn;
   @extend .btn;
   background: none;
-
-  // width: 15px;
-  // height: 15px;
 }
 // ------------------------------------
 
 .nav__btn {
   @extend .btn;
   position: relative;
- color: $txtColorWhite;
+  color: $txtColorWhite;
   line-height: 1.17;
-background: none;
+  background: none;
   text-transform: uppercase;
 
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: -3px;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -3px;
 
-      width: 0;
-      height: 3px;
-      background-color: $genreColor;
+    width: 0;
+    height: 3px;
+    background-color: $genreColor;
 
-transition: width $timing-function $transition-duration;
+    transition: width $timing-function $transition-duration;
   }
 
-&:hover,
-&:focus{
-    &::after{
- 
-  width: 100%;
-     }
-}
-
-
+  &:hover,
+  &:focus {
+    &::after {
+      width: 100%;
+    }
+  }
 }
 .nav__btn.current::after {
   content: '';
