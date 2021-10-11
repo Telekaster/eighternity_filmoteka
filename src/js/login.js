@@ -5,6 +5,7 @@ import takeValue from './login/login_takeValue';
 import sendLogin from './login/login_sendLogin';
 import submitByEnter from './login/login_submit_by_enter';
 import writeWatched from './login/watched';
+import logOut from './login/login_logout';
 let nameValue = '';
 
 const user = {
@@ -21,11 +22,7 @@ function login(loginButton, search, loginWindow, loginClose, loginAcceptButton, 
     loginButton.addEventListener('click', () => { loginWindowOpen(search, loginWindow, loginAcceptButton) });
     loginClose.addEventListener('click', () => { closeLoginWindow(search, loginWindow) });
     loginInput.addEventListener('input', (evt) => { return nameValue = takeValue(evt.target.value, loginAcceptButton) });
-    loginAcceptButton.addEventListener('click', () => { sendLogin(nameValue, loginInput, user, greetingText, loginWindow, search) });
-    window.addEventListener('keydown', (evt) => { submitByEnter(loginAcceptButton, evt, nameValue, loginInput, user, greetingText, loginWindow, search) });
+    loginAcceptButton.addEventListener('click', () => { sendLogin(nameValue, loginInput, user, greetingText, loginWindow, search, loginButton) });
+    window.addEventListener('keydown', (evt) => { submitByEnter(loginButton, loginAcceptButton, evt, nameValue, loginInput, user, greetingText, loginWindow, search) });
+    loginButton.addEventListener('click', (() => { logOut(loginButton) }));
 };
-
-    
-    
-
-
