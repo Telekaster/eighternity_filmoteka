@@ -26,6 +26,8 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
+    "basiclightbox": "^5.0.4",
+    "handlebars": "^4.7.7",
     "lazy-line-painter": "^1.9.6"
   }
 }
