@@ -38,33 +38,30 @@ if(event.target===event.currentTarget){
 
 
 let id=0;
-movieImg.addEventListener('click', (e)=>{
-  modalInfo.innerHTML='';
-     id=e.target.getAttribute('id');
-    fetch(`${BASE_URL}/movie/${id}${API_KEY}&language=en-US`).then(response => {
-      return response.json()
-    }).then(data=>{
-      modalInfo.insertAdjacentHTML('afterbegin', modalMovie(data))
+movieImg.addEventListener('click', (e) => {
+  modalInfo.innerHTML = '';
+  id = e.target.getAttribute('id');
+  fetch(`${BASE_URL}/movie/${id}${API_KEY}&language=en-US`).then(response => {
+    return response.json()
+  }).then(data => {
+    modalInfo.insertAdjacentHTML('afterbegin', modalMovie(data))
       
-      // Дело рук Олега
-      const backdrop = document.querySelector('.backdrop')
-      if (!backdrop.classList.contains('is-hidden')) {
+    // Дело рук Олега-----------------------------------------------------------------------------------------------------------
+    const backdrop = document.querySelector('.backdrop')
+    if (!backdrop.classList.contains('is-hidden')) {
 
-        if (window.localStorage.length === 0) {
-          const modalButtonsList = document.querySelector('.modal-btn__list');
-          // watched
-          modalButtonsList.firstElementChild.nextElementSibling.firstChild.setAttribute('disabled', true);
-          modalButtonsList.firstElementChild.nextElementSibling.firstChild.textContent = 'Log In first';
-          modalButtonsList.firstElementChild.nextElementSibling.firstChild.classList.add('modal-btn_disabled');
-          // quenue
-          modalButtonsList.firstElementChild.nextElementSibling.nextElementSibling.firstChild.setAttribute('disabled', true);
-          modalButtonsList.firstElementChild.nextElementSibling.nextElementSibling.firstChild.textContent = 'Log In first';
-          modalButtonsList.firstElementChild.nextElementSibling.nextElementSibling.firstChild.classList.add('modal-btn_disabled');
-        }
-
-      }
-
-      
-
-    })
-})
+      if (window.localStorage.length === 0) {
+        const modalButtonsList = document.querySelector('.modal-btn__list');
+        // watched
+        modalButtonsList.firstElementChild.nextElementSibling.firstChild.setAttribute('disabled', true);
+        modalButtonsList.firstElementChild.nextElementSibling.firstChild.textContent = 'Log In first';
+        modalButtonsList.firstElementChild.nextElementSibling.firstChild.classList.add('modal-btn_disabled');
+        // quenue
+        modalButtonsList.firstElementChild.nextElementSibling.nextElementSibling.firstChild.setAttribute('disabled', true);
+        modalButtonsList.firstElementChild.nextElementSibling.nextElementSibling.firstChild.textContent = 'Log In first';
+        modalButtonsList.firstElementChild.nextElementSibling.nextElementSibling.firstChild.classList.add('modal-btn_disabled');
+      };
+    };
+    // ----------------------------------------------------------------------------------------------------------------------------
+  });
+});
