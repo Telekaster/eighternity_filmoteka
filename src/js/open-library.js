@@ -1,4 +1,4 @@
-import refs from './refsMarina.js';
+import refs from './refs.js';
 
 const {
 
@@ -7,7 +7,7 @@ const {
     headerMain,
     headerLib,
 
-} = refs;
+} = refs();
 
 // ====== простіша версія==========
 // btnLibOpen.addEventListener('click', openLibrary);

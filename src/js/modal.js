@@ -1,6 +1,6 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
- import {getFetch} from './api.js';
+import {getFetch} from './api.js';
 import modalMovie from '../tamplates/modalMovie.hbs';
 import movieCard from '../tamplates/movieCard.hbs';
 const API_KEY = '?api_key=61165aac189ece3ae64e67d82e58db65';
