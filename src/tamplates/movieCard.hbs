@@ -1,0 +1,12 @@
+{{#each this}}
+<li class="movies__item">
+                <div class="movie__card">
+                <img class="movie__img" src="https://image.tmdb.org/t/p/w500/${poster_path}" loading="lazy" alt="" data-src = "https://image.tmdb.org/t/p/w500/${backdrop_path}"/>
+                
+                <div class="movie__label">
+                <h3 class="movie__name">${title || name}</h3>
+                 <p class="movie__genre">Жанр <span class="movie__year">${first_air_date || '2021'}</span></p>
+                </div>
+                </div>
+                </li>
+                {{/each}}
