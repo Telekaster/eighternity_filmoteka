@@ -45,7 +45,7 @@ movieImg.addEventListener('click', (e)=>{
     fetch(`${BASE_URL}/movie/${id}${API_KEY}&language=en-US`).then(response => {
       return response.json()
     }).then(data=>{
-      console.log(data);
+      // console.log(data);
 
 
 modalInfo.insertAdjacentHTML('afterbegin',modalMovie(data))  

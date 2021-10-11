@@ -4,16 +4,17 @@ import closeLoginWindow from './login/login_close_window';
 import takeValue from './login/login_takeValue';
 import sendLogin from './login/login_sendLogin';
 import submitByEnter from './login/login_submit_by_enter';
+import writeWatched from './login/watched';
+let nameValue = '';
+const user = {
+    name: '',
+    watched: [],
+};
 
 const { loginButton, search, loginWindow, loginClose, loginAcceptButton, loginInput, greetingText } = refs();
 
 login(loginButton, search, loginWindow, loginClose, loginAcceptButton, loginInput, greetingText);
-
-let nameValue = '';
-
-const user = {
-    name: '',
-}
+writeWatched(user);
 
 function login(loginButton, search, loginWindow, loginClose, loginAcceptButton, loginInput, greetingText) {
     loginButton.addEventListener('click', () => { loginWindowOpen(search, loginWindow, loginAcceptButton) });
