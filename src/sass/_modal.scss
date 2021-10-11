@@ -145,6 +145,7 @@ padding: 48px 20px 41px 20px;
     color: $txtColorDark;
     background-color: $primery-bg-color;
     border-radius: 5px;
+    cursor: pointer;
     &:hover{
         background-color: $accent-color;
         color: $primery-bg-color;
