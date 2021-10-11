@@ -11,8 +11,8 @@
   font-style: normal;
   font-weight: normal;
   // margin: 0, auto;
-  padding-top: 30px;
-  padding-bottom: 28px;
+  padding-top: 29px;
+  padding-bottom: 30px;
   &__rights {
     margin: 0;
   }
@@ -29,9 +29,14 @@
     height: 18px;
   }
 
-  &__link {
-    color: $footer-text-color;
-    text-decoration: underline;
+  &__button {
+    text-decoration-line: underline;
+    cursor: pointer;
+    border: none;
+    color: inherit;
+  }
+  &__button:hover {
+    color: $genreColor;
   }
   @media screen and (max-width: 767px) {
     font-size: 14px; //только в моб.версии
@@ -41,8 +46,11 @@
     }
   }
   @media screen and (min-width: 768px) {
+    padding-top: 30px;
+    padding-bottom: 28px;
     &__box {
       display: flex;
+      align-items: center;
     }
   }
 }

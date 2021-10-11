@@ -5,6 +5,11 @@ import loginWindowOpen from './js/login_window';
 import closeLoginWindow from './js/login_close_window';
 import takeValue from './js/login_takeValue';
 import sendLogin from './js/login_sendLogin';
+//Остальной код_______________
+import './js/open-library';
+import './js/login';
+import './js/api.js';
+import './js/modal.js';
 
 import Pagination from 'tui-pagination';
 
@@ -73,5 +78,3 @@ input.addEventListener('input', evt => {
 loginAcceptButton.addEventListener('click', () => {
   sendLogin(nameValue, input, user, greetingText, loginWindow, search);
 });
-
-//Остальной код_______________

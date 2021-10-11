@@ -1,7 +1,10 @@
 .login__section {
   @extend .container;
+  margin-top: 10px;
   width: 100%;
   text-align: center;
+
+  margin-top: 15px;
 }
 
 .login__close_btn {
@@ -10,6 +13,11 @@
   height: 16px;
   background: none;
   margin-left: 150px;
+
+
+  position: relative;//добавила Марина
+  top: 20px;
+  
 }
 
 .login__close_icon {
@@ -36,26 +44,75 @@
   padding: 0;
   color: $txtColorWhite;
   outline: none;
-
+  font-family: $mainFont;
   font-size: 14px;
   line-height: 1.14;
+  align-items: center;
+  color: $txtColorWhite;
   &::placeholder {
     color: $txtColorWhite;
   }
 }
 
 .login__accept_btn {
-  margin-top: 10px;
-  background: $genreColor;
-  border-radius: 5px;
-  font-family: $mainFont;
+  @extend .btn;
+  // width: 100px;
+margin-top: 20px; //творчество Марины
+  // margin-top: 10px;
+  // background: $genreColor;
+  // border-radius: 5px;
+  // font-family: $mainFont;
   font-weight: 500;
   font-size: 12px;
-  line-height: 1.33;
-  align-items: center;
-  text-align: center;
-  text-transform: uppercase;
-  color: $txtColorWhite;
+  // line-height: 1.33;
+  // align-items: center;
+  // text-align: center;
+  // text-transform: uppercase;
+  // color: $txtColorWhite;
+
+width: 100%; //творчество Марины
+max-width: 130px;
+min-height: 25px;
+
+
+line-height: 1.33;
+text-transform: uppercase;
+color: $txtColorWhite;
+
+
+border-radius: 5px;
+background-color: transparent;
+border: solid 1px $txtColorWhite;
+
+
+transition: background-color $timing-function $transition-duration,
+border-color $timing-function $transition-duration,
+box-shadow $timing-function $transition-duration;
+
+@media screen and (min-width: 250px) {
+  min-height: 44px;
+}
+
+@media screen and (min-width: map-get($breakpoints, tablet)) {
+  max-width: 136px;
+}
+
+
+&:hover,
+&:focus {
+  outline: none;
+  background-color: $genreColor;
+  border: solid 1px $genreColor;
+  box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6));
+}
+
+&:active {
+  outline: none;
+  background-color: #973d00;
+  border: solid 1px #973d00;
+  box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6));
+}
+
 }
 
 .login__greetings {
