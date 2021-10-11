@@ -8,7 +8,7 @@ import './js/modal.js';
 import Pagination from 'tui-pagination';
 
 
-// Юля, этот код нужно вынести за пределы index.js, здесь должны остаться только импуты------------------------
+// Юля, этот код нужно вынести за пределы index.js, здесь должны остаться только инпуты------------------------
 const container = document.getElementById('pagination');
 const options = {
   // below default value of options
