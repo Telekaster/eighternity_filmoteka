@@ -1,25 +1,24 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
-import {getFetch} from './api.js';
+
 import modalMovie from '../tamplates/modalMovie.hbs';
-import movieCard from '../tamplates/movieCard.hbs';
+import refs from './refs.js';
+const{movieImg,closeModal,modal,modalInfo}=refs();
 const API_KEY = '?api_key=61165aac189ece3ae64e67d82e58db65';
 const BASE_URL = 'https://api.themoviedb.org/3/';
 
-const movieImg = document.querySelector('.movies');
-const closeModal = document.querySelector('.modal__btn');
-const modal = document.querySelector('.js-backdrop');
-const modalInfo = document.querySelector('.modal__info');
 
 movieImg.addEventListener('click', toggleModal);
 closeModal.addEventListener('click', toggleModal);
 modal.addEventListener('click', onCloseBackdropClickImage);
 
 function toggleModal(e) {
-    modal.classList.toggle('is-hidden');
-window.addEventListener('keydown', onCloseClickEsc);
-
+  console.log(e.target); 
+  modal.classList.toggle('is-hidden');
+  window.addEventListener('keydown', onCloseClickEsc);
 }
+  
+
   
   function onCloseClickEsc(event){
     if(event.code==='Escape'){
@@ -46,9 +45,6 @@ movieImg.addEventListener('click', (e)=>{
       return response.json()
     }).then(data=>{
       console.log(data);
-
-
 modalInfo.insertAdjacentHTML('afterbegin',modalMovie(data))  
     })
 })
-
