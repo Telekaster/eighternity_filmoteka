@@ -18,7 +18,7 @@
         </nav>
       </div>
       <form class="search" action="search">
-        <input class="search__input" type="text" placeholder="Search" />
+        <input class="search__input" type="text" placeholder="Search" name="query" autocomplete="off" required/>
         <button class="search__btn" type="submit">
           <svg class="search__btn-icon">
             <use href="./images/sprite.svg#icon-search"></use>
@@ -47,7 +47,6 @@
         <button class="header-lib__btn current" type="button" id="watched__btn">watched</button>
         <button class="header-lib__btn" type="button" id="queue__btn">queue</button>
       </div>
-
       <p class="alert-answer"></p>
     </div>
   </div>

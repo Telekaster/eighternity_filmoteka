@@ -68,3 +68,5 @@ fetch(url)
 
     })
 
+    // поиск по ключевому слову
+    import "./js/searchByKeyword.js"
