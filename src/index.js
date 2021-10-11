@@ -1,24 +1,14 @@
 // Импорты___________________
 import './sass/main.scss';
 import './js/footer';
-//Остальной код_______________
 import './js/open-library';
 import './js/login';
 import './js/api.js';
 import './js/modal.js';
-
 import Pagination from 'tui-pagination';
 
-// Переменные________________
-const loginButton = document.querySelector('.log_in__button');
-const search = document.querySelector('.search');
-const loginWindow = document.querySelector('.login__section');
-const loginClose = document.querySelector('.login__close_btn');
-const loginAcceptButton = document.querySelector('.login__accept_btn');
-const input = document.querySelector('.login__input');
-const greetingText = document.querySelector('.login__greetings');
-let nameValue = '';
 
+// Юля, этот код нужно вынести за пределы index.js, здесь должны остаться только импуты------------------------
 const container = document.getElementById('pagination');
 const options = {
   // below default value of options
@@ -44,6 +34,7 @@ const options = {
       '</a>',
   },
 };
+
 const pagination = new Pagination(container, options);
 
 pagination.on('beforeMove', event => {
@@ -60,17 +51,4 @@ pagination.on('beforeMove', event => {
 const user = {
   name: '',
 };
-
-// Слушатели событий_________
-loginButton.addEventListener('click', () => {
-  loginWindowOpen(search, loginWindow, loginAcceptButton);
-});
-loginClose.addEventListener('click', () => {
-  closeLoginWindow(search, loginWindow);
-});
-input.addEventListener('input', evt => {
-  return (nameValue = takeValue(evt.target.value, loginAcceptButton));
-});
-loginAcceptButton.addEventListener('click', () => {
-  sendLogin(nameValue, input, user, greetingText, loginWindow, search);
-});
+// --------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
-import modalMovie from '../tamplates/modalMovie.hbs';
+import modalMovie from '../templates/modalMovie.hbs';
 import refs from './refs.js';
 const { movieImg, closeModal, modal, modalInfo, loginButton} = refs();
 const API_KEY = '?api_key=61165aac189ece3ae64e67d82e58db65';
