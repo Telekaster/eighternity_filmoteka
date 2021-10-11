@@ -6,6 +6,7 @@ import sendLogin from './login/login_sendLogin';
 import submitByEnter from './login/login_submit_by_enter';
 import writeWatched from './login/watched';
 let nameValue = '';
+
 const user = {
     name: '',
     watched: [],
