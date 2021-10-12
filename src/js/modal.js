@@ -37,49 +37,7 @@ movieImg.addEventListener('click', (e) => {
     fetch(`${BASE_URL}/movie/${id}${API_KEY}&language=en-US`).then(response => {
       return response.json()
     }).then(data => {
-      modalInfo.insertAdjacentHTML('afterbegin', modalMovie(data))
-      // Дело рук Олега-----------------------------------------------------------------------------------------------------------
-      // Remove watched------------------------------------------------
-      if (loginButton.textContent === 'log out') {
-        const watchedButton = document.querySelector('.btn-watched');
-        console.log(watchedButton);
-        const name = loginButton.getAttribute('id');
-        const moviesObject = JSON.parse(localStorage.getItem(name));
-        const moviesArray = moviesObject.watched;
-
-        moviesArray.map((item) => {
-          if (item === data.id) {
-            watchedButton.textContent = 'remove from watched'
-          }
-
-        })
-
-
-
-
-
-
-
-
-
-
-
-
-      }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      modalInfo.insertAdjacentHTML('afterbegin', modalMovie(data));
 
       // Дело рук Олега-----------------------------------------------------------------------------------------------------------
       const backdrop = document.querySelector('.backdrop')
@@ -96,6 +54,45 @@ movieImg.addEventListener('click', (e) => {
           modalButtonsList.firstElementChild.nextElementSibling.nextElementSibling.firstChild.classList.add('modal-btn_disabled');
         };
       };
+           // Remove watched------------------------------------------------
+      // замена текста кнопки
+      const name = loginButton.getAttribute('id');
+      const watchedButton = document.querySelector('.btn-watched');
+      const user = JSON.parse(localStorage.getItem(name));
+      const moviesArray = JSON.parse(localStorage.getItem(name)).watched;
+
+      if (loginButton.textContent === 'log out') {
+ 
+        moviesArray.map((item) => {
+
+          if (item === data.id) {
+            watchedButton.textContent = 'remove from watched'
+          };
+
+        });
+
+      };
+
+      // Удаление из массива__________________________________---
+      
+      watchedButton.addEventListener('click', ((event) => {
+   
+        if (watchedButton.textContent === 'remove from watched') {
+          const index = moviesArray.indexOf(data.id);
+          console.log(index);
+
+          moviesArray.splice(index, 1);
+          console.log(moviesArray);
+          user.watched = moviesArray;
+          console.log(user.watched);
+          console.log(JSON.stringify(user));
+          localStorage.setItem(name, JSON.stringify(user));
+          location.reload();
+          // watchedButton.textContent = 'add to watched';
+        };
+        
+    }));
+
       // ----------------------------------------------------------------------------------------------------------------------------
   }
 )};
