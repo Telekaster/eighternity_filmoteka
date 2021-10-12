@@ -3,7 +3,7 @@ export default function sendLogin(
     input, user, greetingText, loginWindow, search, loginButton) {
         input.value = '';
         user.name = nameValue;
-    
+    loginButton.classList.remove('current');
         const userJson = JSON.stringify(user);
         
     if (localStorage.getItem(nameValue) === null) {
