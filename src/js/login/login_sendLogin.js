@@ -7,7 +7,7 @@ export default function sendLogin(
         const userJson = JSON.stringify(user);
         
     if (localStorage.getItem(nameValue) === null) {
-        // console.log('пусто');
+        console.log('пусто');
         localStorage.setItem(nameValue, userJson);
         console.log(user.watched);
         user.watched = [];
@@ -21,7 +21,6 @@ export default function sendLogin(
         console.log('Уже есть');
         const localName = JSON.parse(localStorage.getItem(nameValue)).name;
         greetingText.textContent = `Hello ${localName.toUpperCase()}`;
-        // user.watched.push(Number(event.target.getAttribute('id')));
         greetingText.classList.remove('visually-hidden');
         loginWindow.classList.add('visually-hidden');
         search.classList.remove('visually-hidden');
