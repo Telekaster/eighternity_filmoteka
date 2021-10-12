@@ -29,6 +29,7 @@
     "basiclightbox": "^5.0.4",
     "handlebars": "^4.7.7",
     "lazy-line-painter": "^1.9.6",
-    "notiflix": "^3.1.0"
+    "notiflix": "^3.1.0",
+    "tui-pagination": "^3.4.1"
   }
 }

@@ -3,12 +3,12 @@ export default function sendLogin(
     input, user, greetingText, loginWindow, search, loginButton) {
         input.value = '';
         user.name = nameValue;
-    
+    loginButton.classList.remove('current');
         const userJson = JSON.stringify(user);
         
     if (localStorage.getItem(nameValue) === null) {
+        loginButton.setAttribute('id', nameValue);
         localStorage.setItem(nameValue, userJson);
-        console.log(user.watched);
         user.watched = [];
         greetingText.textContent = `Hello ${user.name.toUpperCase()}`;
         greetingText.classList.remove('visually-hidden');
@@ -17,7 +17,8 @@ export default function sendLogin(
         loginButton.textContent = 'log out';
 
     } else {
-        // console.log(false);
+        loginButton.setAttribute('id', nameValue);
+        // console.log(nameValue);
         const localName = JSON.parse(localStorage.getItem(nameValue)).name;
         greetingText.textContent = `Hello ${localName.toUpperCase()}`;
         greetingText.classList.remove('visually-hidden');
@@ -25,6 +26,5 @@ export default function sendLogin(
         search.classList.remove('visually-hidden');
         loginButton.textContent = 'log out';
     };
-    
     
 };
