@@ -5,6 +5,7 @@ import './js/open-library';
 import './js/login';
 import './js/api.js';
 import './js/modal.js';
+import './js/trailer.js'
 import Pagination from 'tui-pagination';
 
 
