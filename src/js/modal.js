@@ -3,7 +3,8 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 import {openTrailer} from './trailer.js';
 import modalMovie from '../templates/modalMovie.hbs';
 import refs from './refs.js';
-const { movieImg, closeModal, modal, modalInfo, loginButton,API_KEY,BASE_URL} = refs();
+
+const { movieImg, closeModal, modal, modalInfo, loginButton, API_KEY, BASE_URL } = refs();
 
 closeModal.addEventListener('click', onCloseImage);
 modal.addEventListener('click', onCloseBackdropClickImage);
@@ -37,6 +38,49 @@ movieImg.addEventListener('click', (e) => {
       return response.json()
     }).then(data => {
       modalInfo.insertAdjacentHTML('afterbegin', modalMovie(data))
+      // Дело рук Олега-----------------------------------------------------------------------------------------------------------
+      // Remove watched------------------------------------------------
+      if (loginButton.textContent === 'log out') {
+        const watchedButton = document.querySelector('.btn-watched');
+        console.log(watchedButton);
+        const name = loginButton.getAttribute('id');
+        const moviesObject = JSON.parse(localStorage.getItem(name));
+        const moviesArray = moviesObject.watched;
+
+        moviesArray.map((item) => {
+          if (item === data.id) {
+            watchedButton.textContent = 'remove from watched'
+          }
+
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       // Дело рук Олега-----------------------------------------------------------------------------------------------------------
       const backdrop = document.querySelector('.backdrop')
       if (!backdrop.classList.contains('is-hidden')) {
