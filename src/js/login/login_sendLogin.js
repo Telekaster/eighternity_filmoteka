@@ -18,6 +18,7 @@ export default function sendLogin(
 
     } else {
         loginButton.setAttribute('id', nameValue);
+        // console.log(nameValue);
         const localName = JSON.parse(localStorage.getItem(nameValue)).name;
         greetingText.textContent = `Hello ${localName.toUpperCase()}`;
         greetingText.classList.remove('visually-hidden');

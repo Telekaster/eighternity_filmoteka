@@ -15,7 +15,7 @@ const user = {
 
 const { loginButton, search, loginWindow, loginClose, loginAcceptButton, loginInput, greetingText } = refs();
 
-login(loginButton, search, loginWindow, loginClose, loginAcceptButton, loginInput, greetingText);
+login(loginButton, search, loginWindow, loginClose, loginAcceptButton, loginInput, greetingText, user);
 writeWatched(user, loginButton);
 
 function login(loginButton, search, loginWindow, loginClose, loginAcceptButton, loginInput, greetingText, user) {
