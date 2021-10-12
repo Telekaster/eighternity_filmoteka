@@ -1,7 +1,6 @@
 import refs from './refs';
+const{API_KEY,BASE_URL}=refs();
 
-const API_KEY = '?api_key=61165aac189ece3ae64e67d82e58db65';
-const BASE_URL = 'https://api.themoviedb.org/3/';
 let params = ''
 
 const { list } = refs();
