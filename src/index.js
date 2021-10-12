@@ -6,3 +6,4 @@ import './js/login';
 import './js/api.js';
 import './js/modal.js';
 import './js/login';
+import './js/trailer.js';
