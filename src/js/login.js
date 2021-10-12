@@ -19,8 +19,8 @@ login(loginButton, search, loginWindow, loginClose, loginAcceptButton, loginInpu
 writeWatched(user);
 
 function login(loginButton, search, loginWindow, loginClose, loginAcceptButton, loginInput, greetingText) {
-    loginButton.addEventListener('click', () => { loginWindowOpen(search, loginWindow, loginAcceptButton) });
-    loginClose.addEventListener('click', () => { closeLoginWindow(search, loginWindow) });
+    loginButton.addEventListener('click', () => { loginWindowOpen(search, loginWindow, loginAcceptButton, loginButton) });
+    loginClose.addEventListener('click', () => { closeLoginWindow(search, loginWindow, loginButton) });
     loginInput.addEventListener('input', (evt) => { return nameValue = takeValue(evt.target.value, loginAcceptButton) });
     loginAcceptButton.addEventListener('click', () => { sendLogin(nameValue, loginInput, user, greetingText, loginWindow, search, loginButton) });
     window.addEventListener('keydown', (evt) => { submitByEnter(loginButton, loginAcceptButton, evt, nameValue, loginInput, user, greetingText, loginWindow, search) });
