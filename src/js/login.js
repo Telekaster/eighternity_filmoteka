@@ -18,6 +18,7 @@ const { loginButton, search, loginWindow, loginClose, loginAcceptButton, loginIn
 login(loginButton, search, loginWindow, loginClose, loginAcceptButton, loginInput, greetingText);
 writeWatched(user);
 
+
 function login(loginButton, search, loginWindow, loginClose, loginAcceptButton, loginInput, greetingText) {
     loginButton.addEventListener('click', () => { loginWindowOpen(search, loginWindow, loginAcceptButton, loginButton) });
     loginClose.addEventListener('click', () => { closeLoginWindow(search, loginWindow, loginButton) });
