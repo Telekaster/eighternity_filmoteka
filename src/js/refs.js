@@ -10,6 +10,8 @@ export default function refs() {
     greetingText: document.querySelector('.login__greetings'),
     // Лиля_________________________________________________
     list: document.querySelector('.movies'),
+    API_KEY: '?api_key=61165aac189ece3ae64e67d82e58db65',
+    BASE_URL: 'https://api.themoviedb.org/3/',
     // Марина_______________________________________________
     // элементы хедера:
     headerMain: document.getElementById('headerMain'),

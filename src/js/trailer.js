@@ -1,8 +1,9 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import {onCloseImage} from './modal.js';
-const API_KEY = '?api_key=61165aac189ece3ae64e67d82e58db65';
-const BASE_URL = 'https://api.themoviedb.org/3/';
+import refs from './refs';
+const{API_KEY,BASE_URL}=refs();
+
 function openTrailer(e){
     if(e.target.className === 'modal-btn trailer-btn'){
            let id = e.target.getAttribute('id');

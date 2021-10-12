@@ -3,9 +3,8 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 import {openTrailer} from './trailer.js';
 import modalMovie from '../templates/modalMovie.hbs';
 import refs from './refs.js';
-const { movieImg, closeModal, modal, modalInfo, loginButton} = refs();
-const API_KEY = '?api_key=61165aac189ece3ae64e67d82e58db65';
-const BASE_URL = 'https://api.themoviedb.org/3/';
+const { movieImg, closeModal, modal, modalInfo, loginButton,API_KEY,BASE_URL} = refs();
+
 closeModal.addEventListener('click', onCloseImage);
 modal.addEventListener('click', onCloseBackdropClickImage);
 function openModal(e) {
