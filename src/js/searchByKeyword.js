@@ -1,12 +1,11 @@
-import filmCards from "../templates/film-keyword.hbs"
-import dataGenres from "../data/genres_id.json"
-const list = document.querySelector('.movies')
-const searchInput = document.querySelector('.search')
+import filmCards from '../templates/film-keyword.hbs';
+import dataGenres from '../data/genres_id.json';
 
+import refs from './refs';
+const { list, search: searchInput } = refs();
 
-const API_KEY = '61165aac189ece3ae64e67d82e58db65';
-const BASE_URL = `https://api.themoviedb.org/3`
-
+import { getFetch } from './api';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 //получить массив жанров
 
@@ -17,35 +16,50 @@ const BASE_URL = `https://api.themoviedb.org/3`
 //     console.log(data.genres);
 //     return data.genres
 // })
-         
 
+const API_KEY = '61165aac189ece3ae64e67d82e58db65';
+const BASE_URL = `https://api.themoviedb.org/3`;
+let userRequest = '';
+
+function getFetchByKeyword() {
+  let params = `/search/movie?api_key=${API_KEY}&query=${userRequest}&language=en-US&page=1&include_adult=false`;
+  let url = BASE_URL + params;
+
+  fetch(url)
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      if (data.results.length === 0) {
+        Notify.warning('По вашему запросу ничего не найдено');
+        getFetch();
+      }
+      return data.results;
+    })
+    .then(array => {
+      console.log(array);
+      clearListMovie();
+      list.insertAdjacentHTML('beforeend', filmCards(array));
+    });
+}
 
 const onSubmit = event => {
-    event.preventDefault();
-    clearListMovie();
-    
-    const userRequest = event.currentTarget.elements.query.value.trim();
-     
-    let params = `/search/movie?api_key=${API_KEY}&query=${userRequest}&language=en-US&page=1&include_adult=false`
-    const url = BASE_URL + params
-    
-    fetch(url).then((response)=>{
-        return response.json()
-    }).then(data=>{
-        if(data.results.length ===0){
-            throw new Error ('ничего не найдено')
-        }
-        return data.results
-    }).then(array=>{
+  event.preventDefault();
 
-        list.insertAdjacentHTML('beforeend', filmCards(array))
-    })
-    
+  userRequest = event.currentTarget.elements.query.value.trim();
+  console.log('поиск', userRequest);
+
+  if (userRequest !== '') {
+    getFetchByKeyword();
+  } else {
+    Notify.info('Введите запрос');
     searchInput.reset();
+    return;
+  }
 };
 
 function clearListMovie() {
-    list.innerHTML = '';
+  list.innerHTML = '';
 }
 
-searchInput.addEventListener('submit', onSubmit)
+searchInput.addEventListener('submit', onSubmit);
