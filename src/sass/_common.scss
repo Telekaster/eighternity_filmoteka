@@ -47,6 +47,11 @@
   font-family: $mainFont;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 640px) {
+    margin-bottom: 0;
+  }
 }
 
 .movie__img {
