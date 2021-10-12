@@ -11,6 +11,7 @@ import './js/trailer.js';
 import Pagination from 'tui-pagination';
 
 
+
 // Юля, этот код нужно вынести за пределы index.js, здесь должны остаться только инпуты------------------------
 const container = document.getElementById('pagination');
 const options = {
