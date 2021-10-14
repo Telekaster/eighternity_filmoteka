@@ -8,7 +8,7 @@ export default function refs() {
     loginAcceptButton: document.querySelector('.login__accept_btn'),
     loginInput: document.querySelector('.login__input'),
     greetingText: document.querySelector('.login__greetings'),
-// Юля__________________________________________________________
+    // Юля__________________________________________________________
     spinner: document.querySelector('.lds-spinner'),
     // Лиля_________________________________________________
     list: document.querySelector('.movies'),
