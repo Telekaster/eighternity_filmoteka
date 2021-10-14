@@ -1,5 +1,4 @@
 //===================MOVIES======================
-
 .movies__section {
   padding-top: 20px;
   padding-bottom: 40px;
@@ -11,55 +10,36 @@
 }
 
 .movies {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   gap: 1rem;
-  //GRID
   display: grid;
   width: 100%;
   margin: 0 auto;
 
   @media screen and (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
+    grid-gap: 20px;
   }
 
   @media screen and (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px;
+    grid-gap: 20px;
   }
 }
 
-// .movies__item {
-//   flex: 1 1 100%; // 1 across at mobile
-
-//   @media screen and (min-width: 640px) {
-//     flex-basis: calc((100% / 2) - 1rem); // 2 across at tabletish
-//   }
-
-//   @media screen and (min-width: 1024px) {
-//     flex-basis: calc((100% / 3) - 2rem); // 3 across at desktop
-//   }
-// }
-
 //===============FONTS================
 .movie__card {
+  border-radius: 7px;
   font-family: $mainFont;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
   background-color: $txtColorWhite;
 
+  padding: 5px;
+
   -webkit-transition: 500ms ease-in-out; /* Safari and Chrome */
   -moz-transition: 500ms ease-in-out; /* Firefox 4 */
   -o-transition: 500ms ease-in-out; /* Opera */
   transition: 500ms ease-in-out; /* стандарт */
-
-  //   background-image: linear-gradient(currentColor, currentColor);
-  //   background-position: 0% 100%;
-  //   background-repeat: no-repeat;
-  //   background-size: 0% 2px;
-  //   transition: background-size 0.3s;
 
   @media screen and (min-width: 640px) {
     margin-bottom: 0;
@@ -68,30 +48,23 @@
   &:hover,
   :focus,
   :active {
-    // transform:
-    // transform: perspective(400px) rotateY(720deg) scale(1.5);
-    // transform: rotate(20deg) scale(1.3);
-    // transform: rotate(720deg) scale(1.5);
-    // border: 3px solid $genreColor;
     cursor: pointer;
     transform: scale(1.1);
     box-shadow: 0px 0px 40px $genreColor, 0px 1px 10px rgb(252, 229, 22),
       0px 2px 2px rgba(0, 0, 0, 0.12);
-    border-radius: 12px;
+    border-radius: 7px;
     text-align: center;
     transition-property: all;
     transition-duration: 850ms;
     transition-timing-function: ease-out;
     transition-delay: 300ms;
-    // background-size: 100% 2px;
+
     @media screen and (min-width: 640px) {
-      animation: rotate 500ms ease-in-out 1000ms;
-      transform: scale(1.21);
-      border-radius: 12px;
+      transform: scale(1.1);
+      border-radius: 7px;
       box-shadow: 0px 0px 40px $genreColor, 0px 1px 10px rgb(252, 229, 22),
         0px 2px 2px rgba(0, 0, 0, 0.12);
       text-align: center;
-      // text-decoration: underline;
       font-size: 25px;
       padding-bottom: 5px;
 
@@ -104,55 +77,12 @@
   }
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg) scale(1.01);
-  }
-  10% {
-    transform: rotate(30deg) scale(1.03);
-  }
-
-  20% {
-    transform: rotate(-30deg) scale(1.05);
-  }
-
-  30% {
-    transform: rotate(25deg) scale(1.07);
-  }
-
-  40% {
-    transform: rotate(-25deg) scale(1.09);
-  }
-
-  50% {
-    transform: rotate(20deg) scale(1.11);
-  }
-
-  60% {
-    transform: rotate(-20deg) scale(1.13);
-  }
-
-  70% {
-    transform: rotate(10deg) scale(1.15);
-  }
-
-  80% {
-    transform: rotate(-10deg) scale(1.17);
-  }
-
-  90% {
-    transform: rotate(5deg) scale(1.19);
-  }
-
-  100% {
-    transform: rotate(0deg) scale(1.21);
-  }
-}
-
 .movie__img {
   max-width: 100%;
-  border-radius: 10px;
+  border-radius: 7px;
   overflow: hidden;
+  //   max-height: 398px; //если пытаюсь зафиксировать высоту для выравнивания всех карточек,
+  //   object-fit: cover; //то некорректно расширяет изображения на планшете и мобиле
 }
 
 .movie__name {
