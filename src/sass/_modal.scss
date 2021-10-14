@@ -203,6 +203,23 @@
   font-size: 12px;
   margin-left: 76px;
 }
-body.no-scroll{
+body.no-scroll {
   overflow: hidden;
+}
+
+// Дело рук Олега___________________________
+.btn-remove_watched {
+  position: absolute;
+
+  @media screen and (max-width: 767px) {
+    transform: translate(-85px, -22px);
+  }
+
+  @media screen and (min-width: 768px) {
+    transform: translate(-95px, -22px);
+  }
+
+  @media screen and (min-width: 1024px) {
+    transform: translate(-140px, -23px);
+  }
 }

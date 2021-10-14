@@ -93,7 +93,7 @@ btnLibOpen.addEventListener('click', async() => {
                 
 btnHomeOpen.addEventListener('click', async () => {
    list.innerHTML = '';
-    document.querySelector('.lib-clear-txt').remove();
+    // document.querySelector('.lib-clear-txt').remove();
     let url = BASE_URL + 'trending/all/day' + API_KEY;
 // const markupArr = []
     const response = await getFetch(url)
