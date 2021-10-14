@@ -28,5 +28,8 @@ export default function refs() {
     closeModal: document.querySelector('.modal__btn'),
     modal: document.querySelector('.js-backdrop'),
     modalInfo: document.querySelector('.modal__info'),
+    body: document.querySelector(`body`),
+    moon: document.querySelector('.theme-switch__moon'),
+    sun: document.querySelector('.theme-switch__sun')
   };
 }
