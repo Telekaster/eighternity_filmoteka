@@ -8,8 +8,9 @@ let params = '';
 function fetchMovieList(page) {
     show(spinner);
     
-    params = `trending/all/day?page=${page}`;
-    let url = BASE_URL + params + API_KEY;
+    params = 'trending/all/day';
+    const page_query = `&page=${page}`;
+    let url = BASE_URL + params + API_KEY + page_query;
 
     fetch(url)
         .then(resp => resp.json())

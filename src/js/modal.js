@@ -42,7 +42,7 @@ movieImg.addEventListener('click', (e) => {
   id = e.target.getAttribute('id');
   if(e.target.nodeName !== 'IMG'){return}else{
     openModal();
-    fetch(`${BASE_URL}/movie/${id}${API_KEY}&language=en-US`).then(response => {
+    fetch(`${BASE_URL}movie/${id}${API_KEY}&language=en-US`).then(response => {
       return response.json()
     }).then(data => {
       modalInfo.insertAdjacentHTML('afterbegin', modalMovie(data));
