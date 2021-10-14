@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" id="header">
   <div class="header__main slide active" id="headerMain">
     <div class="header__container">
       <h3 class="login__greetings visually-hidden"></h3>
@@ -12,13 +12,42 @@
         </a>
         <nav class="nav">
           <button type="button" class="nav__btn current">home</button>
-          <button type="button" class="nav__btn" id="btn-lib-open">my library</button>
+          <button type="button" class="nav__btn" id="btn-lib-open" disabled>my library</button>
           <button type="button" class="log_in__button" id="btn-login-open">Log in</button>
           <!-- Дело рук Олега -->
         </nav>
       </div>
+      <!-- Дело рук Жени -->
+      <div class="theme-switch">
+        <div class="theme-switch__control">
+          <input
+            class="theme-switch__toggle"
+            type="checkbox"
+            name="theme"
+            id="theme-switch-toggle"
+            aria-label="Переключить между тёмной и светлой темой"
+          />
+          <label
+            aria-hidden="true"
+            class="theme-switch__track"
+            for="theme-switch-toggle"
+          >
+          </label>
+          <svg class="theme-switch__moon" aria-label="Иконка луны"><use href="./images/sprite.svg#moon"></use></svg>
+          <svg class="theme-switch__sun" role="img" aria-label="Иконка солнца"><use href="./images/sprite.svg#sun"></use></svg>
+        </div>
+</div>
+
+      <!-- Дело рук Жени -->
       <form class="search" action="search">
-        <input class="search__input" type="text" placeholder="Search" name="query" autocomplete="off" required/>
+        <input
+          class="search__input"
+          type="text"
+          placeholder="Search"
+          name="query"
+          autocomplete="off"
+          required
+        />
         <button class="search__btn" type="submit">
           <svg class="search__btn-icon">
             <use href="./images/sprite.svg#icon-search"></use>

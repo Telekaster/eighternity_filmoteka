@@ -55,9 +55,10 @@
 }
 
 .login__accept_btn {
+  // position: absolute;
   @extend .btn;
   // width: 100px;
-margin-top: 20px; //творчество Марины
+margin-top: 15px; //творчество Марины
   // margin-top: 10px;
   // background: $genreColor;
   // border-radius: 5px;
@@ -71,8 +72,8 @@ margin-top: 20px; //творчество Марины
   // color: $txtColorWhite;
 
 width: 100%; //творчество Марины
-max-width: 130px;
-min-height: 25px;
+max-width: 110px;
+height: 30px;
 
 
 line-height: 1.33;
@@ -89,13 +90,13 @@ transition: background-color $timing-function $transition-duration,
 border-color $timing-function $transition-duration,
 box-shadow $timing-function $transition-duration;
 
-@media screen and (min-width: 250px) {
-  min-height: 44px;
-}
+// @media screen and (min-width: 250px) {
+//   min-height: 44px;
+// }
 
-@media screen and (min-width: map-get($breakpoints, tablet)) {
-  max-width: 136px;
-}
+// @media screen and (min-width: map-get($breakpoints, tablet)) {
+//   max-width: 136px;
+// }
 
 
 &:hover,

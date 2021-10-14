@@ -1,5 +1,10 @@
-// слушатели
+
 //оптимизировать картинки
+//кнопка log in должна быть активной при нажатии
+
+
+
+
 .header{
   width: 100%;
   position: relative;
@@ -11,7 +16,7 @@
 // }
 .header__main {
   display: none;
-  padding: 46px 0; 
+  padding: 42px 0; 
 
   position: relative;
   animation: 0.3s ease-in-out;
@@ -117,7 +122,8 @@
 .log_in__button {
   @extend .nav__btn;
   @extend .btn;
-  background: none;
+
+  // background: none;
 }
 // ------------------------------------
 
@@ -148,8 +154,14 @@
       width: 100%;
     }
   }
+
+  &:disabled{
+   color: darken($txtColorWhite, $amount: 50%);
+   pointer-events: none;
+  }
 }
-.nav__btn.current::after {
+.nav__btn.current::after,
+.log_in__button.current::after {
   content: '';
   display: block;
   position: absolute;
@@ -319,11 +331,11 @@ max-width: 143px;
   box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6));
 }
 
-// .header-lib__btn.current{
-//     background-color: $genreColor;
-//     border: solid 1px $genreColor;
-//    box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6)); 
-// }
+.header-lib__btn.current{
+    background-color: $genreColor;
+    border: solid 1px $genreColor;
+   box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6)); 
+}
 
 
 // .welcome__slide {

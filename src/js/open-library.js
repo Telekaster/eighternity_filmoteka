@@ -23,7 +23,9 @@ const {
 
 
 // ========симпатичніша версія==========
-btnLibOpen.addEventListener('click',  nextSlide);
+btnLibOpen.addEventListener('click', 
+nextSlide   
+ );
 btnHomeOpen.addEventListener('click', prevSlide);
 function nextSlide() {
     
