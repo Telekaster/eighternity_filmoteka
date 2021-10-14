@@ -2,7 +2,7 @@ import refs from './refs.js';
 
 
 
-const { API_KEY, BASE_URL, btnLibOpen, btnHomeOpen, headerLib, watchedBtn, list, loginButton } = refs();
+const { API_KEY, BASE_URL, btnLibOpen, btnHomeOpen,  watchedBtn, queueBtn, list, libClearTxt, loginButton } = refs();
 // console.log(loginButton.id);
 
 
@@ -64,20 +64,10 @@ function createMarkup (data) {
    
 }
 
-
-  
-    //кнопка для створення тексту для користувача з пустим списком фільмів.
-    //value для функції це або watched або queue
 function createTxtForClearWindow(value) {
-    const libClear = document.createElement('h3')
-        libClear.textContent = `Your ${value} list is clear. Here you can add your first movie! :)`
-        libClear.classList.add('lib-clear-txt')
-        list.before(libClear)
+ libClearTxt.textContent = `Your ${value} list is clear. Here you can add your first movie! :)`
 }
-
-
-btnLibOpen.addEventListener('click', async() => {
-   
+async function createWatchedPage() {
     list.innerHTML = '';
     const idArr = getNameUser()
 
@@ -86,19 +76,63 @@ btnLibOpen.addEventListener('click', async() => {
     } else {
         arrMarkupStrings(idArr)
     }
+}
+  
+async function createQueuePage() {
+     list.innerHTML = '';
+console.log('la la la!');
+    //тут вызов!!!
+}
+
+
+function createWatchedPageOnClickBtn() {
+    console.log('what???');
+    watchedBtn.classList.add('current');
+    queueBtn.classList.remove('current');
+    createWatchedPage()
+
+
+    watchedBtn.removeEventListener('click', createWatchedPageOnClickBtn)
+}
+function createQueuePageOnClickBtn() {
+    console.log('hi!');
+    createQueuePage()
+        watchedBtn.classList.remove('current');
+        queueBtn.classList.add('current');
     
+
+
+    watchedBtn.addEventListener('click', createWatchedPageOnClickBtn)
+    // queueBtn.removeEventListener('click', createQueuePageOnClickBtn)
+}
+
+
+btnLibOpen.addEventListener('click', () => {
+    if (watchedBtn.classList.contains('current')) {
+        createWatchedPage()
+    } else if(queueBtn.classList.contains('current')) {
+        console.log('bom bom bom');
+        createQueuePage()
+    }
 })
+ 
+
+
+ btnHomeOpen.addEventListener('click', async () => {
+    list.innerHTML = '';
+    
+    if (libClearTxt.textContent!==null) {
+      libClearTxt.innerText = '';
+      
+    }
+   
+    let url = BASE_URL + 'trending/all/day' + API_KEY;
 
     
-                
-btnHomeOpen.addEventListener('click', async () => {
-   list.innerHTML = '';
-    // document.querySelector('.lib-clear-txt').remove();
-    let url = BASE_URL + 'trending/all/day' + API_KEY;
-// const markupArr = []
     const response = await getFetch(url)
     const data = await response.results
-   const markupArr = await data.map(el => {
+  
+    await data.map(el => {
      const result =  createMarkup(el)
        
          list.insertAdjacentHTML('beforeend', result)
@@ -106,3 +140,6 @@ btnHomeOpen.addEventListener('click', async () => {
 
        
 })
+
+queueBtn.addEventListener('click', createQueuePageOnClickBtn)
+

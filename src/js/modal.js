@@ -3,6 +3,12 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 import {openTrailer} from './trailer.js';
 import modalMovie from '../templates/modalMovie.hbs';
 import refs from './refs.js';
+import changeButtonWatched from './login/watched_button_change';
+import writeWatched from './login/add_to_watch';
+import removeWatched from './login/remove_from_watch';
+import changeButtonQueue from './login/queue_button_change';
+import writeQueue from './login/add_to_queue';
+import removeQueue from './login/remove_from_queue';
 const body = document.querySelector('.body')
 const { movieImg, closeModal, modal, modalInfo, loginButton, API_KEY, BASE_URL } = refs();
 
@@ -36,58 +42,30 @@ movieImg.addEventListener('click', (e) => {
   id = e.target.getAttribute('id');
   if(e.target.nodeName !== 'IMG'){return}else{
     openModal();
-    fetch(`${BASE_URL}/movie/${id}${API_KEY}&language=en-US`).then(response => {
+    fetch(`${BASE_URL}movie/${id}${API_KEY}&language=en-US`).then(response => {
       return response.json()
     }).then(data => {
       modalInfo.insertAdjacentHTML('afterbegin', modalMovie(data));
 
       // Дело рук Олега-----------------------------------------------------------------------------------------------------------
-      const backdrop = document.querySelector('.backdrop')
-      if (!backdrop.classList.contains('is-hidden')) {
-        if (loginButton.textContent === 'Log in') {
-          const modalButtonsList = document.querySelector('.modal-btn__list');
-          // watched
-          modalButtonsList.firstElementChild.nextElementSibling.firstChild.setAttribute('disabled', true);
-          modalButtonsList.firstElementChild.nextElementSibling.firstChild.textContent = 'Log In first';
-          modalButtonsList.firstElementChild.nextElementSibling.firstChild.classList.add('modal-btn_disabled');
-          // quenue
-          modalButtonsList.firstElementChild.nextElementSibling.nextElementSibling.firstChild.setAttribute('disabled', true);
-          modalButtonsList.firstElementChild.nextElementSibling.nextElementSibling.firstChild.textContent = 'Log In first';
-          modalButtonsList.firstElementChild.nextElementSibling.nextElementSibling.firstChild.classList.add('modal-btn_disabled');
-        };
-      };
-           // Remove watched------------------------------------------------
-      // замена текста кнопки
-      const name = loginButton.getAttribute('id');
+      const backdrop = document.querySelector('.backdrop');
       const watchedButton = document.querySelector('.btn-watched');
       const removeWatchedButton = document.querySelector('.btn-remove_watched');
+      const queueButton = document.querySelector('.btn-queue');
+      const removeQueueButton = document.querySelector('.btn-remove_queue');
+      const name = loginButton.getAttribute('id');
       const user = JSON.parse(localStorage.getItem(name));
-      let moviesArray = [];
+      let queueMoviesArray = [];
 
-      if (loginButton.textContent === 'log out') {
-        moviesArray = JSON.parse(localStorage.getItem(name)).watched;
-        moviesArray.map((item) => {
+      // watched
+      changeButtonWatched(backdrop, loginButton, watchedButton, queueButton, name, data, removeWatchedButton);
+      writeWatched(user, loginButton);
+      removeWatched(removeWatchedButton, watchedButton, user, name, data);
 
-          if (item === data.id) {
-            watchedButton.classList.add('is-hidden');
-            removeWatchedButton.classList.remove('is-hidden');
-          };
-
-        });
-
-      };
-
-      // Удаление из массива__________________________________---
-      
-      removeWatchedButton.addEventListener('click', ((event) => {
-        const index = moviesArray.indexOf(data.id);
-        moviesArray.splice(index, 1);
-        user.watched = moviesArray;
-        localStorage.setItem(name, JSON.stringify(user));
-        removeWatchedButton.classList.add('is-hidden');
-        watchedButton.classList.remove('is-hidden');
-    }));
-
+      // Queue
+      changeButtonQueue(loginButton, queueMoviesArray, queueButton, removeQueueButton, name);
+      writeQueue(user, loginButton);
+      removeQueue(removeQueueButton, queueMoviesArray, data, user, name, queueButton);
       // ----------------------------------------------------------------------------------------------------------------------------
   }
 )};

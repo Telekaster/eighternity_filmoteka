@@ -208,7 +208,12 @@ body.no-scroll {
 }
 
 // Дело рук Олега___________________________
+.btn-watched {
+  @extend .modal-btn;
+}
+
 .btn-remove_watched {
+  @extend .modal-btn;
   position: absolute;
 
   @media screen and (max-width: 767px) {
@@ -221,5 +226,26 @@ body.no-scroll {
 
   @media screen and (min-width: 1024px) {
     transform: translate(-140px, -23px);
+  }
+}
+
+.btn-queue {
+  @extend .modal-btn;
+}
+
+.btn-remove_queue {
+  @extend .modal-btn;
+  position: absolute;
+
+  @media screen and (max-width: 767px) {
+    transform: translate(-70px, -22px);
+  }
+
+  @media screen and (min-width: 768px) {
+    transform: translate(-80px, -22px);
+  }
+
+  @media screen and (min-width: 1024px) {
+    transform: translate(-125.5px, -22.5px);
   }
 }
