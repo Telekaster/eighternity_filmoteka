@@ -154,6 +154,11 @@
       width: 100%;
     }
   }
+
+  &:disabled{
+   color: darken($txtColorWhite, $amount: 50%);
+   pointer-events: none;
+  }
 }
 .nav__btn.current::after,
 .log_in__button.current::after {
@@ -326,11 +331,11 @@ max-width: 143px;
   box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6));
 }
 
-// .header-lib__btn.current{
-//     background-color: $genreColor;
-//     border: solid 1px $genreColor;
-//    box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6)); 
-// }
+.header-lib__btn.current{
+    background-color: $genreColor;
+    border: solid 1px $genreColor;
+   box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6)); 
+}
 
 
 // .welcome__slide {

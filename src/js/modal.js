@@ -61,7 +61,7 @@ movieImg.addEventListener('click', (e) => {
       const name = loginButton.getAttribute('id');
       const watchedButton = document.querySelector('.btn-watched');
       const user = JSON.parse(localStorage.getItem(name));
-      const moviesArray = JSON.parse(localStorage.getItem(name)).watched;
+      const moviesArray = JSON.parse(localStorage.getItem(name)).watched;//ошибку пишет!!!!
 
       if (loginButton.textContent === 'log out') {
  

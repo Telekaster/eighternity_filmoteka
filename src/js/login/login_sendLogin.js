@@ -1,9 +1,13 @@
 export default function sendLogin(
     nameValue,
-    input, user, greetingText, loginWindow, search, loginButton) {
+    input, user, greetingText, loginWindow, search, loginButton,  btnLibOpen) {
         input.value = '';
-        user.name = nameValue;
+    user.name = nameValue;
+   // ================Маріна
     loginButton.classList.remove('current');
+    btnLibOpen.removeAttribute('disabled');
+    
+    //=====================
         const userJson = JSON.stringify(user);
         
     if (localStorage.getItem(nameValue) === null) {
