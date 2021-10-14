@@ -3,7 +3,7 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 import {openTrailer} from './trailer.js';
 import modalMovie from '../templates/modalMovie.hbs';
 import refs from './refs.js';
-
+const body = document.querySelector('.body')
 const { movieImg, closeModal, modal, modalInfo, loginButton, API_KEY, BASE_URL } = refs();
 
 closeModal.addEventListener('click', onCloseImage);
@@ -12,6 +12,7 @@ function openModal(e) {
   modal.classList.toggle('is-hidden');
   window.addEventListener('keydown', onCloseClickEsc);
   document.addEventListener('click', openTrailer);
+  document.body.classList.add('no-scroll');
 }
   function onCloseClickEsc(event){
     if(event.code==='Escape'){
@@ -22,6 +23,7 @@ function onCloseImage(e){
     window.removeEventListener('keydown', onCloseClickEsc);
       modal.classList.toggle('is-hidden');
       document.removeEventListener('click', openTrailer);
+      document.body.classList.remove('no-scroll');
 };
 function onCloseBackdropClickImage(event){
 if(event.target===event.currentTarget){

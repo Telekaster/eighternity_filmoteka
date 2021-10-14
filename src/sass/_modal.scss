@@ -39,6 +39,7 @@
     width: 618px;
   }
   @media screen and (min-width: 1024px) {
+    overflow: hidden;
     width: 882px;
   }
 }
@@ -201,4 +202,7 @@
   @extend %title;
   font-size: 12px;
   margin-left: 76px;
+}
+body.no-scroll{
+  overflow: hidden;
 }

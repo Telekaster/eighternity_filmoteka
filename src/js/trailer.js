@@ -15,6 +15,5 @@ function openTrailer(e){
             `);
                 trailer.show();
               })
-              onCloseImage()
 }};
 export {openTrailer};
