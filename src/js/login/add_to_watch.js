@@ -1,32 +1,27 @@
-export default function writeWatched (user, loginButton) {
+export default function writeWatched(user, loginButton) {
     document.addEventListener('click', ((event) => {
-        if (event.target.className === 'modal-btn btn-watched') {
-            const watchedButton = document.querySelector('.btn-watched');
-            
+        const watchedButton = document.querySelector('.btn-watched');
+        const removeWatchedButton = document.querySelector('.btn-remove_watched');
+
+        if (event.target.classList.contains('btn-watched')) {
             
             if (localStorage.getItem(user.name) === null) {
                     event.target.setAttribute('disabled', true);
             }
 
+            if (!watchedButton.classList.contains('is-hidden')) {
 
-
-            if (watchedButton.textContent === 'add to watched') {
-                // console.log(true);
-                const watchedButton = document.querySelector('.btn-watched');
-                const removeWatchedButton = document.querySelector('.btn-remove_watched');
-            
                 // Тянем массив из localStorage_____
-                user.watched = JSON.parse(localStorage.getItem(user.name)).watched;
-                // console.log('Старый массив' , user.watched);
+                const array = JSON.parse(localStorage.getItem(user.name)).watched;
+                const queue = JSON.parse(localStorage.getItem(user.name)).queue;
                 // Добаляем новые фильмы_______
-                user.watched.push(Number(event.target.getAttribute('id')));
-                // console.log('Новый массив', user.watched);
+                array.push(Number(event.target.getAttribute('id')));
                 // Отправляем объект в localStorage
+                user.watched = array;
+                user.queue = queue;
                 localStorage.setItem(user.name, JSON.stringify(user));
-                // watchedButton.document.querySelector('.btn-watched');
                 watchedButton.classList.add('is-hidden');
                 removeWatchedButton.classList.remove('is-hidden');
-
             };
 
         };
