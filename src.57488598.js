@@ -77,4 +77,4 @@ var t;!function(e,n){"object"==typeof exports&&"object"==typeof module?module.ex
 },{"tui-pagination":"jPMh","./refs":"VyiV","./spinner":"Sc1o","./api":"cZF8"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/footer"),require("./js/login"),require("./js/open-library"),require("./js/render-watched-films.js"),require("./js/api.js"),require("./js/modal.js"),require("./js/searchByKeyword"),require("./js/trailer.js"),require("./js/switch-theme.js"),require("./js/pagination");
 },{"./sass/main.scss":"clu1","./js/footer":"b5Ik","./js/login":"yZtF","./js/open-library":"f5Ci","./js/render-watched-films.js":"AaJ3","./js/api.js":"cZF8","./js/modal.js":"RSqK","./js/searchByKeyword":"cdWO","./js/trailer.js":"J7DG","./js/switch-theme.js":"pE8F","./js/pagination":"o8lo"}]},{},["Focm"], null)
-//# sourceMappingURL=/eighternity_filmoteka/src.7c237df9.js.map
+//# sourceMappingURL=/eighternity_filmoteka/src.57488598.js.map
