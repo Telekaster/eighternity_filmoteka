@@ -13,6 +13,7 @@ export default function refs() {
     // Лиля_________________________________________________
     list: document.querySelector('.movies'),
     API_KEY: '&api_key=61165aac189ece3ae64e67d82e58db65',
+    libClearTxt: document.getElementById('libClearTxt'),
     BASE_URL: 'https://api.themoviedb.org/3/',
     // Марина_______________________________________________
     // элементы хедера:
@@ -23,7 +24,7 @@ export default function refs() {
     // кнопки в бібліотеці:
     watchedBtn: document.getElementById('watched__btn'),
     queueBtn: document.getElementById('queue__btn'),
-    //(хто буде підключати, то кнопки мають стилі на активний стан, властивість current)
+    
 
     // Женя_______________________________________________
     movieImg: document.querySelector('.movies'),
