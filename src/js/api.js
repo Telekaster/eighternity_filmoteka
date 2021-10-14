@@ -1,16 +1,19 @@
 import refs from './refs';
-const{API_KEY,BASE_URL}=refs();
+import { show, hide } from './spinner';
+const { spinner } = refs(); 
+const { API_KEY, BASE_URL, list } = refs();
 
-let params = ''
+let params = '';
 
-const { list } = refs();
-
-params = 'trending/all/day'
- function getFetch(){
+function fetchMovieList(page) {
+    show(spinner);
+    
+    params = `trending/all/day?page=${page}`;
     let url = BASE_URL + params + API_KEY;
+
     fetch(url)
         .then(resp => resp.json())
-        .then(data =>data.results)
+        .then(data => data.results)
         .then(array => {
             let result = array.map(elem => {
                 // console.log('Result:', elem)
@@ -27,12 +30,10 @@ params = 'trending/all/day'
                 </div>
                 </div>
                 </li>`
-            }).join('')
-            list.insertAdjacentHTML('beforeend', result)
-    
+            }).join('');
+            hide(spinner);
+            list.insertAdjacentHTML('beforeend', result);
         })
-    
 }
 
-getFetch()
-export {getFetch}
+export { fetchMovieList };
