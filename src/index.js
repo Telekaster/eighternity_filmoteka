@@ -1,6 +1,5 @@
 // Импорты___________________
 import './sass/main.scss';
-import './js/footer';
 import './js/login';
 import './js/open-library';
 import './js/render-watched-films.js';
@@ -13,6 +12,9 @@ import './js/trailer.js';
 import Pagination from 'tui-pagination';
 import './js/switch-theme.js';
 
+import './js/footer';
+import './js/footer-modal';
+import './js/team';
 
 // Юля, этот код нужно вынести за пределы index.js, здесь должны остаться только инпуты------------------------
 const container = document.getElementById('pagination');

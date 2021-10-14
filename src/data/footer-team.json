@@ -1,0 +1,84 @@
+[
+  {
+    "image": "/oleg.09ee7db2.jpg",
+    "name": "Oleg Bondarenko",
+    "description": "photo Oleg Bondarenko",
+    "linkedIcon": "/sprite.5ec50489.svg#icon-linkedin",
+    "githubIcon": "/sprite.5ec50489.svg#icon-github",
+    "linkedin": "",
+    "github": "",
+    "workedOn": "Team Lead,, workedOn ...,   ...., workedOn "
+  },
+  {
+    "image": "/anna.1657b598.jpg",
+    "name": "Anna Mitina",
+    "description": "photo Anna Mitina",
+    "linkedIcon": "/sprite.5ec50489.svg#icon-linkedin",
+    "githubIcon": "/sprite.5ec50489.svg#icon-github",
+    "linkedin": "",
+    "github": "",
+    "workedOn": "workedOn, workedOn ...,   ...., workedOn "
+  },
+  {
+    "image": "./marina.2430631d.jpg",
+    "name": "Marina Tripetska",
+    "description": "photo Marina Tripetska",
+    "linkedIcon": "/sprite.5ec50489.svg#icon-linkedin",
+    "githubIcon": "/sprite.5ec50489.svg#icon-github",
+    "linkedin": "https://www.linkedin.com/in/maryna-tripetska-682a48184/",
+    "github": "https://github.com/MarinaTripetska",
+    "workedOn": " workedOn, workedOn ...,   ...., workedOn "
+  },
+  {
+    "image": "/evgeniya.b3a2bb58.jpg",
+    "name": "Evgeniya Barabash",
+    "description": "photo Evgeniya Barabash",
+    "linkedIcon": "/sprite.5ec50489.svg#icon-linkedin",
+    "githubIcon": "/sprite.5ec50489.svg#icon-github",
+    "linkedin": "https://www.linkedin.com/in/evgeniya-barabash-518988211/",
+    "github": "https://github.com/EvgeniyaBarabash",
+    "workedOn": "Movie modal window, and watch trailer for one click"
+  },
+
+  {
+    "image": "/taras.c3ff9c26.jpg",
+    "name": "Taras Demchenko",
+    "description": "photo Taras Demchenko",
+    "linkedIcon": "/sprite.5ec50489.svg#icon-linkedin",
+    "githubIcon": "/sprite.5ec50489.svg#icon-github",
+    "linkedin": "https://www.linkedin.com/in/taras-demchenko-77b80a145/",
+    "github": "https://github.com/Meelenych",
+    "workedOn": "workedOn,, workedOn ...,   ...., workedOn "
+  },
+  {
+    "image": "/tamara.01d51fa9.jpg",
+    "name": "Tamara Glushchenko",
+    "description": "photo Tamara Glushchenko",
+    "linkedIcon": "/sprite.5ec50489.svg#icon-linkedin",
+    "githubIcon": "/sprite.5ec50489.svg#icon-github",
+    "linkedin": "https://www.linkedin.com/feed/",
+    "github": "https://github.com/gluschenkotoma",
+    "workedOn": "Footer, modal window of project team"
+  },
+  {
+    "image": "/julia.01faf20f.jpg",
+    "name": "Julia Kulias",
+    "description": "photo Julia Kulias",
+    "linkedIcon": "/sprite.5ec50489.svg#icon-linkedin",
+    "githubIcon": "/sprite.5ec50489.svg#icon-github",
+    "linkedin": "",
+    "github": "",
+    "workedOn": "workedOn, workedOn ...,   ...., workedOn "
+  },
+
+  {
+    "image": "/taras.c3ff9c26.jpg",
+    "name": "name",
+    "description": "photo name",
+    "linkedIcon": "/sprite.5ec50489.svg#icon-linkedin",
+    "githubIcon": "/sprite.5ec50489.svg#icon-github",
+    "linkedin": "",
+    "github": "",
+    "workedOn": "workedOn, workedOn ...,   ...., workedOn "
+  }
+]
