@@ -60,15 +60,17 @@ movieImg.addEventListener('click', (e) => {
       // замена текста кнопки
       const name = loginButton.getAttribute('id');
       const watchedButton = document.querySelector('.btn-watched');
+      const removeWatchedButton = document.querySelector('.btn-remove_watched');
       const user = JSON.parse(localStorage.getItem(name));
-      const moviesArray = JSON.parse(localStorage.getItem(name)).watched;//ошибку пишет!!!!
+      let moviesArray = [];
 
       if (loginButton.textContent === 'log out') {
- 
+        moviesArray = JSON.parse(localStorage.getItem(name)).watched;
         moviesArray.map((item) => {
 
           if (item === data.id) {
-            watchedButton.textContent = 'remove from watched'
+            watchedButton.classList.add('is-hidden');
+            removeWatchedButton.classList.remove('is-hidden');
           };
 
         });
@@ -77,22 +79,13 @@ movieImg.addEventListener('click', (e) => {
 
       // Удаление из массива__________________________________---
       
-      watchedButton.addEventListener('click', ((event) => {
-   
-        if (watchedButton.textContent === 'remove from watched') {
-          const index = moviesArray.indexOf(data.id);
-          console.log(index);
-
-          moviesArray.splice(index, 1);
-          console.log(moviesArray);
-          user.watched = moviesArray;
-          console.log(user.watched);
-          console.log(JSON.stringify(user));
-          localStorage.setItem(name, JSON.stringify(user));
-          location.reload();
-          // watchedButton.textContent = 'add to watched';
-        };
-        
+      removeWatchedButton.addEventListener('click', ((event) => {
+        const index = moviesArray.indexOf(data.id);
+        moviesArray.splice(index, 1);
+        user.watched = moviesArray;
+        localStorage.setItem(name, JSON.stringify(user));
+        removeWatchedButton.classList.add('is-hidden');
+        watchedButton.classList.remove('is-hidden');
     }));
 
       // ----------------------------------------------------------------------------------------------------------------------------
