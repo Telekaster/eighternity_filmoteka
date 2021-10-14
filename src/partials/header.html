@@ -17,6 +17,28 @@
           <!-- Дело рук Олега -->
         </nav>
       </div>
+      <!-- Дело рук Жени -->
+      <div class="theme-switch">
+        <div class="theme-switch__control">
+          <input
+            class="theme-switch__toggle"
+            type="checkbox"
+            name="theme"
+            id="theme-switch-toggle"
+            aria-label="Переключить между тёмной и светлой темой"
+          />
+          <label
+            aria-hidden="true"
+            class="theme-switch__track"
+            for="theme-switch-toggle"
+          >
+          </label>
+          <svg class="theme-switch__moon" aria-label="Иконка луны"><use href="./images/sprite.svg#moon"></use></svg>
+          <svg class="theme-switch__sun" role="img" aria-label="Иконка солнца"><use href="./images/sprite.svg#sun"></use></svg>
+        </div>
+</div>
+
+      <!-- Дело рук Жени -->
       <form class="search" action="search">
         <input
           class="search__input"
@@ -36,7 +58,6 @@
     </div>
     <include src="./partials/login.html"></include>
   </div>
-
   <div class="header-lib slide" id="headerLib">
     <div class="header__container">
       <div class="header__top">
