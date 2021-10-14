@@ -12,7 +12,7 @@ export default function refs() {
     spinner: document.querySelector('.lds-spinner'),
     // Лиля_________________________________________________
     list: document.querySelector('.movies'),
-    API_KEY: '&api_key=61165aac189ece3ae64e67d82e58db65',
+    API_KEY: '?api_key=61165aac189ece3ae64e67d82e58db65',
     libClearTxt: document.getElementById('libClearTxt'),
     BASE_URL: 'https://api.themoviedb.org/3/',
     // Марина_______________________________________________
