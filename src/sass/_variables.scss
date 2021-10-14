@@ -1,9 +1,10 @@
 // Здесь переменные
 $txtColorDark: #000000;
 $txtColorWhite: #fff;
-$genreColor: #FF6B08;
-$txtColorGrey: #8C8C8C;
+$genreColor: #ff6b08;
 $footer-text-color: #545454;
+$txtColorGrey: #8c8c8c;
+$lineColor: #2094f3e6;
 $footer-background-color: #f7f7f7;
 $mainFont: Roboto, Arial, sans-serif;
 
@@ -12,7 +13,6 @@ $breakpoints: (
   tablet: 768px,
   laptop: 1024px,
 );
-
 
 $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 $transition-duration: 250ms;

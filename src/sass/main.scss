@@ -1,13 +1,15 @@
 @import './variables';
 @import './general';
 @import './header';
-@import'./modal';
+@import './modal';
 @import './login';
 @import './common';
-@import './footer';
 @import './pagination';
 @import './spinner';
 @import './button-up';
 @import './lib-styles';
 @import './switch-theme';
 
+@import './footer';
+@import './footer-modal';
+@import './footer-teamlist';
