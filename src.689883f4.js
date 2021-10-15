@@ -85,4 +85,4 @@ module.exports=[{image:"/oleg.09ee7db2.jpg",name:"Oleg Bondarenko",description:"
 },{"tui-pagination":"jPMh","./refs":"VyiV","./spinner":"Sc1o","./api":"cZF8"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/login"),require("./js/open-library"),require("./js/render-watched-films.js"),require("./js/api.js"),require("./js/modal.js"),require("./js/searchByKeyword"),require("./js/trailer.js");var e=r(require("tui-pagination"));function r(e){return e&&e.__esModule?e:{default:e}}require("./js/switch-theme.js"),require("./js/footer"),require("./js/footer-modal"),require("./js/team"),require("./js/pagination");
 },{"./sass/main.scss":"clu1","./js/login":"yZtF","./js/open-library":"f5Ci","./js/render-watched-films.js":"AaJ3","./js/api.js":"cZF8","./js/modal.js":"RSqK","./js/searchByKeyword":"cdWO","./js/trailer.js":"J7DG","tui-pagination":"jPMh","./js/switch-theme.js":"pE8F","./js/footer":"b5Ik","./js/footer-modal":"zUU9","./js/team":"ZxpD","./js/pagination":"o8lo"}]},{},["Focm"], null)
-//# sourceMappingURL=/eighternity_filmoteka/src.a7ab8fda.js.map
+//# sourceMappingURL=/eighternity_filmoteka/src.689883f4.js.map
