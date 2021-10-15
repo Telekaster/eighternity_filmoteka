@@ -120,15 +120,16 @@
 
 // Дело рук Олега-------------------
 .log_in__button {
-  @extend .nav__btn;
+ 
   @extend .btn;
-
+ @extend .nav__btn;
   // background: none;
 }
 // ------------------------------------
 
 .nav__btn {
   @extend .btn;
+  // padding: 10px 0;
   position: relative;
   color: $txtColorWhite;
   line-height: 1.17;

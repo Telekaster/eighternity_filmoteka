@@ -1,21 +1,22 @@
 import refs from './refs.js';
-
-
-
-const { API_KEY, BASE_URL, btnLibOpen, btnHomeOpen,  watchedBtn, queueBtn, list, libClearTxt, loginButton } = refs();
+import { show, hide } from './spinner';
+const { spinner, API_KEY, BASE_URL, btnLibOpen, btnHomeOpen,  watchedBtn, queueBtn, list, libClearTxt, loginButton } = refs();
 // console.log(loginButton.id);
 
 
 
-function getNameUser() {
-const userName = loginButton.id
+function getUserData () {
+    const userName = loginButton.id;
     const saveData = localStorage.getItem(userName);
-const parseData = JSON.parse(saveData);
-     
-return [...parseData.watched];
+    return JSON.parse(saveData);
+    
+    // const targetIdArr = parseData.value;
+    // return targetIdArr
+    // return [...parseData];
 }
 
 async function getFetch(url) {
+    // show(spinner);
     try {
        const response = await fetch(url);
       
@@ -24,19 +25,39 @@ async function getFetch(url) {
     return fetchedObj 
     } catch (error) {
         console.log(error.message);
+        //тут можна випливашку з меседжем повісити
     }
 
 };
+//це не працює!!! не знаю чому!_____________________________
+function templateImgCheck(path) {
+            
+         const templateJpg = "./images/kamera-template.jpg"
+        const templateWebp = "./images/kamera-template.webp"
+        
+        if (path === null) {
+           return `${templateJpg}` 
+        } else {
+            return `https://image.tmdb.org/t/p/w500/${path}` 
+        }         
+}
+    
+//_______________________________________________________________
 
-function createMarkup (data) {
-                  
+
+function createMarkup(data) {
+   
                     const { poster_path, backdrop_path, name, vote_average, first_air_date, title, id } = data;
-                    
+
+    
+     const templateSrc =templateImgCheck(poster_path)
+    const templateDataSrc = templateImgCheck(backdrop_path)
+    
                      return `
                 <li class="movies__item" >
                 <div class="movie__card">
-                <img class="movie__img" id=${id} src="https://image.tmdb.org/t/p/w500/${poster_path}" loading="lazy" 
-                alt="${title}" data-src = "https://image.tmdb.org/t/p/w500/${backdrop_path}"/>
+                <img class="movie__img" id=${id} src=${templateSrc} loading="lazy" 
+                alt="${title}" data-src = "${templateDataSrc}"/>
                 
                 <div class="movie__label">
                 <h3 class="movie__name">${title || name}</h3>
@@ -46,8 +67,13 @@ function createMarkup (data) {
                 </li>`
 }
 
-  async function arrMarkupStrings(idArr) {
-       return idArr.map(id => {
+async function arrMarkupStrings(idArr) {
+      show(spinner)
+      return idArr.map(id => {
+          if (id === 0) {
+              return;
+          } 
+        //   const page_query = `&page=${page}`;
         let url = `${BASE_URL}/movie/${id}${API_KEY}&language=en-US`
            getFetch(url)
                .then((data) => {
@@ -55,8 +81,8 @@ function createMarkup (data) {
                })
                
              .then((string) => {
-                //  console.log(string);
-                 list.insertAdjacentHTML('beforeend', string)
+                 hide(spinner);
+                 list.insertAdjacentHTML('beforeend', string);
                  
            })
                 
@@ -69,8 +95,7 @@ function createTxtForClearWindow(value) {
 }
 async function createWatchedPage() {
     list.innerHTML = '';
-    const idArr = getNameUser()
-
+    const idArr = getUserData().watched
     if (idArr.length === 0) {
         createTxtForClearWindow('watched')
     } else {
@@ -80,13 +105,18 @@ async function createWatchedPage() {
   
 async function createQueuePage() {
      list.innerHTML = '';
-console.log('la la la!');
-    //тут вызов!!!
+    const idArr = getUserData().queue;
+    if (idArr.length === 0) {
+        createTxtForClearWindow('queue')
+    } else {
+        arrMarkupStrings(idArr)
+    }
+
+
 }
 
 
 function createWatchedPageOnClickBtn() {
-    console.log('what???');
     watchedBtn.classList.add('current');
     queueBtn.classList.remove('current');
     createWatchedPage()
@@ -95,7 +125,6 @@ function createWatchedPageOnClickBtn() {
     watchedBtn.removeEventListener('click', createWatchedPageOnClickBtn)
 }
 function createQueuePageOnClickBtn() {
-    console.log('hi!');
     createQueuePage()
         watchedBtn.classList.remove('current');
         queueBtn.classList.add('current');
@@ -103,16 +132,14 @@ function createQueuePageOnClickBtn() {
 
 
     watchedBtn.addEventListener('click', createWatchedPageOnClickBtn)
-    // queueBtn.removeEventListener('click', createQueuePageOnClickBtn)
-}
+    }
 
 
 btnLibOpen.addEventListener('click', () => {
     if (watchedBtn.classList.contains('current')) {
         createWatchedPage()
     } else if(queueBtn.classList.contains('current')) {
-        console.log('bom bom bom');
-        createQueuePage()
+         createQueuePage()
     }
 })
  

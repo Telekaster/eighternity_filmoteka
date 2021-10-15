@@ -1,6 +1,7 @@
 // Импорты___________________
 import './sass/main.scss';
 import './js/login';
+import './js/intersectionObserver.js'
 import './js/open-library';
 import './js/render-watched-films.js';
 import './js/api.js';
