@@ -53,26 +53,20 @@
     box-shadow: 0px 0px 40px $genreColor, 0px 1px 10px rgb(252, 229, 22),
       0px 2px 2px rgba(0, 0, 0, 0.12);
     border-radius: 7px;
-    text-align: center;
+
     transition-property: all;
     transition-duration: 850ms;
     transition-timing-function: ease-out;
     transition-delay: 300ms;
+    animation-direction: alternate;
 
     @media screen and (min-width: 640px) {
       transform: scale(1.1);
       border-radius: 7px;
       box-shadow: 0px 0px 40px $genreColor, 0px 1px 10px rgb(252, 229, 22),
         0px 2px 2px rgba(0, 0, 0, 0.12);
-      text-align: center;
       font-size: 25px;
       padding-bottom: 5px;
-
-      transition-property: all;
-      transition-duration: 850ms;
-      transition-timing-function: ease-out;
-      transition-delay: 300ms;
-      animation-direction: alternate;
     }
   }
 }
