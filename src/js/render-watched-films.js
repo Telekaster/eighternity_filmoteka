@@ -1,5 +1,6 @@
 import refs from './refs.js';
-const { API_KEY, BASE_URL, btnLibOpen, btnHomeOpen,  watchedBtn, queueBtn, list, libClearTxt, loginButton } = refs();
+import { show, hide } from './spinner';
+const { spinner, API_KEY, BASE_URL, btnLibOpen, btnHomeOpen,  watchedBtn, queueBtn, list, libClearTxt, loginButton } = refs();
 // console.log(loginButton.id);
 
 
@@ -15,6 +16,7 @@ function getUserData () {
 }
 
 async function getFetch(url) {
+    // show(spinner);
     try {
        const response = await fetch(url);
       
@@ -27,16 +29,35 @@ async function getFetch(url) {
     }
 
 };
+//це не працює!!! не знаю чому!_____________________________
+function templateImgCheck(path) {
+            
+         const templateJpg = "./images/kamera-template.jpg"
+        const templateWebp = "./images/kamera-template.webp"
+        
+        if (path === null) {
+           return `${templateJpg}` 
+        } else {
+            return `https://image.tmdb.org/t/p/w500/${path}` 
+        }         
+}
+    
+//_______________________________________________________________
 
-function createMarkup (data) {
-                  
+
+function createMarkup(data) {
+   
                     const { poster_path, backdrop_path, name, vote_average, first_air_date, title, id } = data;
-                    
+
+    
+     const templateSrc =templateImgCheck(poster_path)
+    const templateDataSrc = templateImgCheck(backdrop_path)
+    
                      return `
                 <li class="movies__item" >
                 <div class="movie__card">
-                <img class="movie__img" id=${id} src="https://image.tmdb.org/t/p/w500/${poster_path}" loading="lazy" 
-                alt="${title}" data-src = "https://image.tmdb.org/t/p/w500/${backdrop_path}"/>
+                <img class="movie__img" id=${id} src=${templateSrc} loading="lazy" 
+                alt="${title}" data-src = "${templateDataSrc}"/>
                 
                 <div class="movie__label">
                 <h3 class="movie__name">${title || name}</h3>
@@ -46,13 +67,13 @@ function createMarkup (data) {
                 </li>`
 }
 
-  async function arrMarkupStrings(idArr) {
+async function arrMarkupStrings(idArr) {
+      show(spinner)
       return idArr.map(id => {
           if (id === 0) {
-            //   console.log('catch');
               return;
           } 
-          
+        //   const page_query = `&page=${page}`;
         let url = `${BASE_URL}/movie/${id}${API_KEY}&language=en-US`
            getFetch(url)
                .then((data) => {
@@ -60,8 +81,8 @@ function createMarkup (data) {
                })
                
              .then((string) => {
-                
-                 list.insertAdjacentHTML('beforeend', string)
+                 hide(spinner);
+                 list.insertAdjacentHTML('beforeend', string);
                  
            })
                 
