@@ -17,14 +17,19 @@
   transform: translate(-50%, -50%) scale(1.1);
 }
 .modal-footer {
+  overflow-y: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
   position: absolute;
+  max-height: 100%;
   top: 50%;
   left: 50%;
-  height: auto;
+
   padding: 20px;
   border-radius: 3px;
   border-color: $lineColor;
   border-style: solid;
+  overflow-y: scroll;
 
   background-color: $footer-background-color;
   transform: translate(-50%, -50%) scale(1);

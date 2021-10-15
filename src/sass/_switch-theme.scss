@@ -92,20 +92,33 @@ body.dark-theme {
   & .movie__name {
     color: $txtColorWhite;
   }
-  & .modal{
+  & .modal {
     background-color: #575757;
   }
-  & .modal__btn{
+  & .modal__btn {
     background-color: #575757;
-      color: $txtColorWhite;
-    &:hover{
+    color: $txtColorWhite;
+    &:hover {
       color: $genreColor;
     }
   }
-  & .modal__title, .genre, .original-title, .popularity, .modal__title, .about-title, .about-text{
-    color:  $txtColorWhite;
+  & .modal__title,
+  .genre,
+  .original-title,
+  .popularity,
+  .modal__title,
+  .about-title,
+  .about-text {
+    color: $txtColorWhite;
+  }
+  & .footer {
+    color: $footer-background-color;
+    background-color: $footer-text-color;
+  }
+  & .modal-footer {
+    background-color: $footer-text-color;
   }
 }
 body.light-theme {
-  background-color:$txtColorWhite;
+  background-color: $txtColorWhite;
 }
