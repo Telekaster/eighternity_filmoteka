@@ -206,7 +206,9 @@
 body.no-scroll {
   overflow: hidden;
 }
-
+.modal-btn--margin{
+margin-left: -15px;
+}
 // Дело рук Олега___________________________
 .btn-watched {
   @extend .modal-btn;
@@ -217,15 +219,15 @@ body.no-scroll {
   position: absolute;
 
   @media screen and (max-width: 767px) {
-    transform: translate(-85px, -22px);
+    transform: translate(-155px, -22px);
   }
 
   @media screen and (min-width: 768px) {
-    transform: translate(-95px, -22px);
+    transform: translate(-175px, -22px);
   }
 
   @media screen and (min-width: 1024px) {
-    transform: translate(-140px, -23px);
+    transform: translate(-265px, -23px);
   }
 }
 

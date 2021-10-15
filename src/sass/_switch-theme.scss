@@ -22,23 +22,25 @@
 
 .theme-switch__sun {
   position: absolute;
-  top: 3px;
-  left: -4px;
+  top: -1px;
+  left: -13px;
   fill: white;
-  height: 15px;
-  width: 15px;
+  height: 25px;
+  width: 35px;
   margin-right: 8px;
   margin-left: 8px;
+  cursor: pointer;
 }
 .theme-switch__moon {
   position: absolute;
-  top: 2px;
-  right: -5px;
+  top: 1px;
+  right: -15px;
   fill: white;
-  height: 15px;
-  width: 15px;
+  height: 20px;
+  width: 34px;
   margin-right: 8px;
   margin-left: 8px;
+  cursor: pointer;
 }
 .theme-switch__control {
   position: relative;
@@ -72,29 +74,16 @@
   height: 100%;
   color: transparent;
   user-select: none;
-  background-color: #333;
+  background-color: $darkGreySwitchTheme;
   border-radius: inherit;
   cursor: pointer;
-}
-
-.theme-switch__toggle:checked + .theme-switch__track {
-  background-color: #d3d3d4;
-}
-
-.theme-switch__toggle:checked ~ .theme-switch__marker {
-  transform: translateX(35px);
-}
-
-.theme-switch__toggle:focus + .theme-switch__track,
-.theme-switch__toggle:active + .theme-switch__track {
-  box-shadow: 0 0 0 3px #2196f3;
 }
 .accent-icon {
   fill: $genreColor;
 }
 
 body.dark-theme {
-  background-color: #333333;
+  background-color: $darkGreySwitchTheme;
 
   & .movie__card {
     background-color: $cardColorDark;
@@ -103,7 +92,20 @@ body.dark-theme {
   & .movie__name {
     color: $txtColorWhite;
   }
+  & .modal{
+    background-color: #575757;
+  }
+  & .modal__btn{
+    background-color: #575757;
+      color: $txtColorWhite;
+    &:hover{
+      color: $genreColor;
+    }
+  }
+  & .modal__title, .genre, .original-title, .popularity, .modal__title, .about-title, .about-text{
+    color:  $txtColorWhite;
+  }
 }
 body.light-theme {
-  background-color: #fff;
+  background-color:$txtColorWhite;
 }
