@@ -1,18 +1,17 @@
 import refs from './refs.js';
-
-
-
 const { API_KEY, BASE_URL, btnLibOpen, btnHomeOpen,  watchedBtn, queueBtn, list, libClearTxt, loginButton } = refs();
 // console.log(loginButton.id);
 
 
 
-function getNameUser() {
-const userName = loginButton.id
+function getUserData () {
+    const userName = loginButton.id;
     const saveData = localStorage.getItem(userName);
-const parseData = JSON.parse(saveData);
-     
-return [...parseData.watched];
+    return JSON.parse(saveData);
+    
+    // const targetIdArr = parseData.value;
+    // return targetIdArr
+    // return [...parseData];
 }
 
 async function getFetch(url) {
@@ -24,6 +23,7 @@ async function getFetch(url) {
     return fetchedObj 
     } catch (error) {
         console.log(error.message);
+        //тут можна випливашку з меседжем повісити
     }
 
 };
@@ -47,7 +47,12 @@ function createMarkup (data) {
 }
 
   async function arrMarkupStrings(idArr) {
-       return idArr.map(id => {
+      return idArr.map(id => {
+          if (id === 0) {
+            //   console.log('catch');
+              return;
+          } 
+          
         let url = `${BASE_URL}/movie/${id}${API_KEY}&language=en-US`
            getFetch(url)
                .then((data) => {
@@ -55,7 +60,7 @@ function createMarkup (data) {
                })
                
              .then((string) => {
-                //  console.log(string);
+                
                  list.insertAdjacentHTML('beforeend', string)
                  
            })
@@ -69,8 +74,7 @@ function createTxtForClearWindow(value) {
 }
 async function createWatchedPage() {
     list.innerHTML = '';
-    const idArr = getNameUser()
-
+    const idArr = getUserData().watched
     if (idArr.length === 0) {
         createTxtForClearWindow('watched')
     } else {
@@ -80,13 +84,18 @@ async function createWatchedPage() {
   
 async function createQueuePage() {
      list.innerHTML = '';
-console.log('la la la!');
-    //тут вызов!!!
+    const idArr = getUserData().queue;
+    if (idArr.length === 0) {
+        createTxtForClearWindow('queue')
+    } else {
+        arrMarkupStrings(idArr)
+    }
+
+
 }
 
 
 function createWatchedPageOnClickBtn() {
-    console.log('what???');
     watchedBtn.classList.add('current');
     queueBtn.classList.remove('current');
     createWatchedPage()
@@ -95,7 +104,6 @@ function createWatchedPageOnClickBtn() {
     watchedBtn.removeEventListener('click', createWatchedPageOnClickBtn)
 }
 function createQueuePageOnClickBtn() {
-    console.log('hi!');
     createQueuePage()
         watchedBtn.classList.remove('current');
         queueBtn.classList.add('current');
@@ -103,16 +111,14 @@ function createQueuePageOnClickBtn() {
 
 
     watchedBtn.addEventListener('click', createWatchedPageOnClickBtn)
-    // queueBtn.removeEventListener('click', createQueuePageOnClickBtn)
-}
+    }
 
 
 btnLibOpen.addEventListener('click', () => {
     if (watchedBtn.classList.contains('current')) {
         createWatchedPage()
     } else if(queueBtn.classList.contains('current')) {
-        console.log('bom bom bom');
-        createQueuePage()
+         createQueuePage()
     }
 })
  

@@ -19,7 +19,7 @@ export default function refs() {
     BASE_URL: 'https://api.themoviedb.org/3/',
 
     // Марина_______________________________________________
-    // элементы хедера:
+    // элементи хедера:
     headerMain: document.getElementById('headerMain'),
     headerLib: document.getElementById('headerLib'),
     btnHomeOpen: document.getElementById('btn-home-open'),
@@ -27,6 +27,9 @@ export default function refs() {
     // кнопки в бібліотеці:
     watchedBtn: document.getElementById('watched__btn'),
     queueBtn: document.getElementById('queue__btn'),
+
+    //кнопка повернення на верх_______________________
+buttonUP: document.getElementById('buttonUP'),
 
     // Женя_______________________________________________
     movieImg: document.querySelector('.movies'),
