@@ -1,5 +1,5 @@
 export default
-function changeButtonQueue(loginButton, queueMoviesArray, queueButton, removeQueueButton, name) {
+function changeButtonQueue(loginButton, queueMoviesArray, queueButton, removeQueueButton, name, data) {
     if (loginButton.textContent === 'log out') {
         queueMoviesArray = JSON.parse(localStorage.getItem(name)).queue;
         queueMoviesArray.map((item) => {
