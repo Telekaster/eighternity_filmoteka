@@ -7,6 +7,8 @@ const { list, search: searchInput } = refs();
 import { getFetch } from './api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+import observeCards from './intersectionObserver.js';
+
 //получить массив жанров
 
 // const urlGanreList =`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`
@@ -37,6 +39,8 @@ function getFetchByKeyword() {
       return data.results;
     })
     .then(array => {
+      // console.log(array);
+
       let result = array
         .map(elem => {
           const { poster_path, backdrop_path, original_title, genre_ids, release_date, title, id } =
@@ -59,9 +63,9 @@ function getFetchByKeyword() {
                 </div>
               </div>
             </li>`;
-          }else{
-            // console.log("есть результат без постера");
-           return `<li class='movies__item'>
+          } else {
+            console.log('есть результат без постера');
+            return `<li class='movies__item'>
               <div class='movie__card'>
                 <img
                   class='movie__img' 
@@ -78,12 +82,14 @@ function getFetchByKeyword() {
                 </div>
               </div>
             </li>`;
-            
           }
         })
         .join('');
+
       clearListMovie();
       list.insertAdjacentHTML('beforeend', result);
+
+      observeCards(list);
     });
 }
 
