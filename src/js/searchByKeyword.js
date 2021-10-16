@@ -1,4 +1,4 @@
-import filmCards from '../templates/film-keyword.hbs';
+// import filmCards from '../templates/film-keyword.hbs';
 import dataGenres from '../data/genres_id.json';
 
 import refs from './refs';
@@ -37,9 +37,53 @@ function getFetchByKeyword() {
       return data.results;
     })
     .then(array => {
-      console.log(array);
+      let result = array
+        .map(elem => {
+          const { poster_path, backdrop_path, original_title, genre_ids, release_date, title, id } =
+            elem;
+          if (poster_path !== null) {
+            return `<li class='movies__item'>
+              <div class='movie__card'>
+                <img
+                  class='movie__img' 
+                  id=${id}
+                  src="https://image.tmdb.org/t/p/w500/${poster_path}"
+                  loading='lazy'
+                  alt='${original_title}'
+                  data-src="https://image.tmdb.org/t/p/w500/${backdrop_path}"
+                />
+            
+                <div class='movie__label'>
+                  <h3 class='movie__name'>${title}</h3>
+                  <p class='movie__genre'>${genre_ids}<span class='movie__year'>${release_date}</span></p>
+                </div>
+              </div>
+            </li>`;
+          }else{
+            // console.log("есть результат без постера");
+           return `<li class='movies__item'>
+              <div class='movie__card'>
+                <img
+                  class='movie__img' 
+                  id=${id}
+                  src='https://www.kino-teatr.ru/static/images/no_poster.jpg'
+                  loading='lazy'
+                  alt='${original_title}'
+                  data-src="https://image.tmdb.org/t/p/w500/${backdrop_path}"
+                />
+            
+                <div class='movie__label'>
+                  <h3 class='movie__name'>${title}</h3>
+                  <p class='movie__genre'>${genre_ids}<span class='movie__year'>${release_date}</span></p>
+                </div>
+              </div>
+            </li>`;
+            
+          }
+        })
+        .join('');
       clearListMovie();
-      list.insertAdjacentHTML('beforeend', filmCards(array));
+      list.insertAdjacentHTML('beforeend', result);
     });
 }
 
@@ -63,3 +107,5 @@ function clearListMovie() {
 }
 
 searchInput.addEventListener('submit', onSubmit);
+
+export { getFetchByKeyword };
