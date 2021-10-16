@@ -1,7 +1,8 @@
 import refs from './refs';
 import { show, hide } from './spinner';
+import observeCards from './intersectionObserver.js';
 const { spinner } = refs(); 
-const { API_KEY, BASE_URL, list } = refs();
+const { API_KEY, BASE_URL, list, buttonUP } = refs();
 
 let params = '';
 
@@ -34,6 +35,9 @@ function fetchMovieList(page) {
             }).join('');
             hide(spinner);
             list.insertAdjacentHTML('beforeend', result);
+            //-------------------------Маріна
+           observeCards(list);            
+            //-------------------------------
         })
 }
 
