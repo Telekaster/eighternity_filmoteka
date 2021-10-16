@@ -2,6 +2,10 @@ import Pagination from 'tui-pagination';
 import refs from './refs';
 
 import { show, hide } from './spinner';
+const { search: searchInput } = refs();
+
+import { getMoviesByQuery } from './searchByKeyword';
+
 
 import { fetchMovieList } from './api';
 
@@ -47,6 +51,14 @@ pagination.on('beforeMove', event => {
   // }
   // TODO: Add API service to fetch next portion of films
   list.innerHTML = '';
-  fetchMovieList(currentPage);
+  if (searchInput.children[0].value != '') {
+    const query = searchInput.children[0].value;
+    getMoviesByQuery(query, currentPage);
+  } else {
+    fetchMovieList(currentPage);
+  }
+  
   console.log('Move to: ', currentPage);
 });
+
+export default pagination;
