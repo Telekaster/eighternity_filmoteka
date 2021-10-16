@@ -5,9 +5,9 @@
     "description": "photo Oleg Bondarenko",
     "linkedIcon": "/sprite.5ec50489.svg#icon-linkedin",
     "githubIcon": "/sprite.5ec50489.svg#icon-github",
-    "linkedin": "",
-    "github": "",
-    "workedOn": "Team Lead,, workedOn ...,   ...., workedOn "
+    "linkedin": "https://www.linkedin.com/in/olegbondarenko51b7ba4b/",
+    "github": "https://github.com/Telekaster",
+    "workedOn": "Team Lead, development of user login logic and design, saving information about watched films and films in the queue"
   },
   {
     "image": "/anna.1657b598.jpg",
@@ -37,7 +37,7 @@
     "githubIcon": "/sprite.5ec50489.svg#icon-github",
     "linkedin": "https://www.linkedin.com/in/evgeniya-barabash-518988211/",
     "github": "https://github.com/EvgeniyaBarabash",
-    "workedOn": "Movie modal window, and watch trailer for one click"
+    "workedOn": "Movie modal window, and watch trailer for one click, switch-theme"
   },
 
   {
@@ -72,12 +72,12 @@
   },
 
   {
-    "image": "/taras.c3ff9c26.jpg",
-    "name": "name",
-    "description": "photo name",
+    "image": "",
+    "name": "Liliya Yavorskaya",
+    "description": "photo Liliya Yavorskaya",
     "linkedIcon": "/sprite.5ec50489.svg#icon-linkedin",
     "githubIcon": "/sprite.5ec50489.svg#icon-github",
-    "linkedin": "",
+    "linkedin": "https://www.linkedin.com/in/liliya-yavorskaya-4391a6217/",
     "github": "",
     "workedOn": "workedOn, workedOn ...,   ...., workedOn "
   }

@@ -1,3 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
+}
+
 .footer {
   display: flex;
   align-items: center;
@@ -13,9 +29,11 @@
   // margin: 0, auto;
   padding-top: 29px;
   padding-bottom: 30px;
+  flex: 0 0 auto;
   &__rights {
     margin: 0;
   }
+
   &__info {
     margin-left: 4px;
   }
@@ -34,6 +52,7 @@
     cursor: pointer;
     border: none;
     color: inherit;
+    background-color: inherit;
   }
   &__button:hover {
     color: $genreColor;
