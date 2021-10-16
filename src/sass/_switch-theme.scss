@@ -117,6 +117,13 @@ body.dark-theme {
   }
   & .modal-footer {
     background-color: $footer-text-color;
+    color: $footer-background-color;
+  }
+  & .network-list__link {
+    fill: $footer-background-color;
+  }
+  & .network-list__link:hover {
+    fill: $lineColor;
   }
 }
 body.light-theme {
