@@ -116,5 +116,3 @@ const onSubmit = (event) => {
 };
 
 searchInput.addEventListener('submit', onSubmit);
-
-export { getFetchByKeyword };
