@@ -30,7 +30,7 @@
 
   top: 50%;
   left: 50%;
-
+  color: $footer-text-color;
   padding: 20px;
   border-radius: 3px;
   border-color: $lineColor;
@@ -57,6 +57,8 @@
     // border-radius: 50%;
   }
   &__name-team {
+    align-items: center;
+    text-align: center;
     color: $lineColor;
   }
   &__icon-close {
