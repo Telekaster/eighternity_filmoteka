@@ -16,35 +16,30 @@
 
   @media screen and (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-gap: 30px;
   }
 
   @media screen and (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: 30px;
   }
 }
 
-
 ///________________Маріна
-.movies__item{
- opacity: 0;
-  transform: scale(.5);
+.movies__item {
+  opacity: 0;
+  transform: scale(0.5);
 }
 
 .movies__item.observe {
   transform: scale(1);
- opacity: 1;
-  width: 274px;
-  height: 439px;
-  transition: opacity linear 400ms,
-transform ease-in-out 400ms;
- 
+  opacity: 1;
+  //   width: 274px;
+  //   height: 439px;
+  transition: opacity linear 400ms, transform ease-in-out 400ms;
 }
 
 ///____________________________________
-
-
 
 //===============FONTS================
 .movie__card {
@@ -92,22 +87,19 @@ transform ease-in-out 400ms;
   }
 }
 //Маріна вклинилась______
-.movies__item .movie__img{
+.movies__item .movie__img {
   background: url(../images/kamera-template.jpg);
   background-size: contain;
 }
 
-
 .movie__img {
+  //   width: 100%; //Маріна
+  //   min-height: 396px; //Маріна
+  height: 100%; //Тарас
+  //   ____________________________
+  max-width: 100%; //Тарас
+  //_______________________
 
-width: 100%; //Маріна
-min-height: 396px; //Маріна
-// height: 100%; //Тарас
-//____________________________
-// max-width: 100%; //Тарас
-//_______________________
-
-  
   border-radius: 7px;
   overflow: hidden;
   //   max-height: 398px; //если пытаюсь зафиксировать высоту для выравнивания всех карточек,
