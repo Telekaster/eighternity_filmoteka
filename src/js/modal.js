@@ -65,7 +65,7 @@ movieImg.addEventListener('click', (e) => {
       // Queue
       changeButtonQueue(loginButton, queueMoviesArray, queueButton, removeQueueButton, name, data);
       writeQueue(user, loginButton);
-      removeQueue(removeQueueButton, queueMoviesArray, data, user, name, queueButton);
+      removeQueue(removeQueueButton, queueButton, user, name, data);
       // ----------------------------------------------------------------------------------------------------------------------------
   }
 )};

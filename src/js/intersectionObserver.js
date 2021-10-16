@@ -1,13 +1,24 @@
-// import refs from './refs.js';
-// const { buttonUP, list } = refs;
 
 
-// const observer = new IntersectionObserver(clb, option);
-// function clb() {
-//     if (list.length === 0) {
-//          return
-//     } else if (list.length > 6) {
-//         console.log('ho ho ho');
-//      }
-// }
+export default async function observeCards(list) {
+
+    const options = {};
+
+const observer = new IntersectionObserver(clb, options);
+ function clb(entries, observer) {
+     entries.forEach((entry, index) => {
+              entry.isIntersecting
+            ? entry.target.classList.add('observe')
+             : entry.target.classList.remove('observe')
+     
+    });
+    }
+   
+    const itemsArr = [...list.children];
+    itemsArr.forEach((li) => {
+         observer.observe(li);
+    })
+
+}
  
+

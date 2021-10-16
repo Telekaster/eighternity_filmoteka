@@ -10,6 +10,7 @@ openModalBtn.addEventListener('click', onOpenModal);
 function onOpenModal() {
   window.addEventListener('keydown', onEscClick); //для Esc
   backdrop.classList.remove('is-hidden');
+  document.body.classList.add('no-scroll');
 }
 
 // ========================закрыть модалку нажатием по иконке ========================================
@@ -18,6 +19,7 @@ closeModalBtn.addEventListener('click', onCloseModal);
 function onCloseModal() {
   window.removeEventListener('keydown', onEscClick); //для Esc
   backdrop.classList.add('is-hidden');
+  document.body.classList.remove('no-scroll');
 }
 
 //  ==============================закрыть по backdrop====================
