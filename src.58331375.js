@@ -81,4 +81,4 @@ const e=document.querySelector("[data-open-modal]"),o=document.querySelector("[d
 },{"./refs.js":"VyiV"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/login"),require("./js/open-library"),require("./js/render-watched-films.js"),require("./js/api.js"),require("./js/modal.js"),require("./js/searchByKeyword"),require("./js/trailer.js"),require("./js/switch-theme.js"),require("./js/footer"),require("./js/footer-modal"),require("./js/pagination"),require("./js/btn-UP-in-show.js");
 },{"./sass/main.scss":"clu1","./js/login":"yZtF","./js/open-library":"f5Ci","./js/render-watched-films.js":"AaJ3","./js/api.js":"cZF8","./js/modal.js":"RSqK","./js/searchByKeyword":"cdWO","./js/trailer.js":"J7DG","./js/switch-theme.js":"pE8F","./js/footer":"b5Ik","./js/footer-modal":"zUU9","./js/pagination":"o8lo","./js/btn-UP-in-show.js":"qi4L"}]},{},["Focm"], null)
-//# sourceMappingURL=/eighternity_filmoteka/src.4badf653.js.map
+//# sourceMappingURL=/eighternity_filmoteka/src.58331375.js.map
