@@ -1,9 +1,10 @@
 import refs from './refs';
 import { show, hide } from './spinner';
 import genres from '../data/genres_id.json'
-import observeCards from './intersectionObserver.js';
+
 const { spinner } = refs();
-const { API_KEY, BASE_URL, list, buttonUP } = refs();
+const { API_KEY, BASE_URL, list } = refs();
+
 
 let params = '';
 
@@ -20,6 +21,7 @@ function fetchMovieList(page) {
         .then(array => {
             let result = array.map(elem => {
                 console.log('Result:', elem)
+
                 const { poster_path, backdrop_path, name, vote_average, first_air_date, title, id, genre_ids } = elem
 
                 const getUserById = function (arr, id) {
@@ -29,6 +31,7 @@ function fetchMovieList(page) {
 
                 console.log(getUserById(genres, ...genre_ids).name);
                 console.log(getUserById(genres, (genre_ids)[0, 2]).name);
+
                 return `
                 <li class="movies__item" >
                 <div class="movie__card">
@@ -36,16 +39,18 @@ function fetchMovieList(page) {
                 
                 <div class="movie__label">
                 <h3 class="movie__name">${title || name}</h3>
+
                  <p class="movie__genre">${getUserById(genres, ...genre_ids).name || getUserById(genres, genre_ids[0, 2]).name}<span class="movie__year">${first_air_date || '2021'}</span></p>
+
+
                 </div>
                 </div>
                 </li>`
             }).join('');
             hide(spinner);
             list.insertAdjacentHTML('beforeend', result);
-            //-------------------------Маріна
-            observeCards(list);
-            //-------------------------------
+
+
         })
 }
 
