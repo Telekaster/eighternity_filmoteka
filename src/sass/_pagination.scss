@@ -27,7 +27,8 @@
   // height: 28px;
   // margin: 14px 0 12px;
   // margin: 45px 60px;
-  margin: 40px 20px;
+  //   margin: 40px 20px; //Юля
+  margin-bottom: 60px; // Taras
   line-height: normal;
   text-align: center;
   // font-size: 0;
@@ -229,4 +230,8 @@
   height: 12px;
   padding: 8px 0 6px;
   vertical-align: top;
+}
+
+.pagination {
+  margin: 0;
 }
