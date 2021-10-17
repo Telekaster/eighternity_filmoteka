@@ -1,14 +1,15 @@
 import refs from './refs';
 import { show, hide } from './spinner';
 import observeCards from './intersectionObserver.js';
-const { spinner } = refs(); 
+import genres from '../data/genres_id.json'
+const { spinner } = refs();
 const { API_KEY, BASE_URL, list, buttonUP } = refs();
 
 let params = '';
 
 function fetchMovieList(page) {
     show(spinner);
-    
+
     params = 'trending/all/day';
     const page_query = `&page=${page}`;
     let url = BASE_URL + params + API_KEY + page_query;
@@ -19,8 +20,21 @@ function fetchMovieList(page) {
         .then(array => {
             let result = array.map(elem => {
                 // console.log('Result:', elem)
-                const { poster_path, backdrop_path, name, vote_average, first_air_date, title, id } = elem
-    
+                const { poster_path, backdrop_path, name, vote_average, first_air_date, title, id, genre_ids } = elem
+                const getUserById = function (arr, id,) {
+                    let res = arr.find(x => x.id === id);
+
+                    if (res === undefined) {
+                        return 0
+                    }
+                    else { return { ...res } }
+
+                }
+
+                console.log(...genre_ids)
+                console.log(getUserById(genres, ...genre_ids).name);
+                console.log(getUserById(genres, genre_ids[0, 1]).name);
+
                 return `
                 <li class="movies__item" >
                 <div class="movie__card">
@@ -28,7 +42,7 @@ function fetchMovieList(page) {
                 
                 <div class="movie__label">
                 <h3 class="movie__name">${title || name}</h3>
-                 <p class="movie__genre">Жанр <span class="movie__year">${first_air_date || '2021'}</span></p>
+                 <p class="movie__genre">${getUserById(genres, ...genre_ids).name || getUserById(genres, genre_ids[0, 1]).name}<span class="movie__year">${first_air_date || '2021'}</span></p>
                 </div>
                 </div>
                 </li>`
@@ -36,7 +50,7 @@ function fetchMovieList(page) {
             hide(spinner);
             list.insertAdjacentHTML('beforeend', result);
             //-------------------------Маріна
-           observeCards(list);            
+            observeCards(list);
             //-------------------------------
         })
 }
