@@ -1,5 +1,3 @@
-import * as basicLightbox from 'basiclightbox';
-import 'basiclightbox/dist/basicLightbox.min.css';
 import {openTrailer} from './trailer.js';
 import modalMovie from '../templates/modalMovie.hbs';
 import refs from './refs.js';
@@ -9,11 +7,12 @@ import removeWatched from './login/remove_from_watch';
 import changeButtonQueue from './login/queue_button_change';
 import writeQueue from './login/add_to_queue';
 import removeQueue from './login/remove_from_queue';
-const body = document.querySelector('.body')
 const { movieImg, closeModal, modal, modalInfo, loginButton, API_KEY, BASE_URL } = refs();
 
 closeModal.addEventListener('click', onCloseImage);
 modal.addEventListener('click', onCloseBackdropClickImage);
+movieImg.addEventListener('click', renderMovieForCard);
+
 function openModal(e) {
   modal.classList.toggle('is-hidden');
   window.addEventListener('keydown', onCloseClickEsc);
@@ -37,7 +36,7 @@ if(event.target===event.currentTarget){
 }
 };
 let id=0;
-movieImg.addEventListener('click', (e) => {
+function renderMovieForCard(e){
   modalInfo.innerHTML = '';
   id = e.target.getAttribute('id');
   if(e.target.nodeName !== 'IMG'){return}else{
@@ -69,5 +68,5 @@ movieImg.addEventListener('click', (e) => {
       // ----------------------------------------------------------------------------------------------------------------------------
   }
 )};
-});
-export {onCloseImage};
+};
+

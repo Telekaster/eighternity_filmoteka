@@ -1,7 +1,6 @@
 const openModalBtn = document.querySelector('[data-open-modal]');
 const closeModalBtn = document.querySelector('[data-modal-close]');
 const backdrop = document.querySelector('[data-backdrop]');
-console.log(backdrop, closeModalBtn, openModalBtn);
 
 openModalBtn.addEventListener('click', onOpenModal);
 

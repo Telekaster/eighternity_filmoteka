@@ -1,6 +1,5 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
-import {onCloseImage} from './modal.js';
 import refs from './refs';
 const{API_KEY,BASE_URL}=refs();
 
