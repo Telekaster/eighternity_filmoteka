@@ -36,8 +36,8 @@
           </svg>
         </div>
       </div>
-
       <!-- Дело рук Жени -->
+
       <form class="search" action="search">
         <input
           class="search__input"
@@ -77,5 +77,25 @@
       </div>
       <p class="alert-answer"></p>
     </div>
+    <!-- Дело рук Жени -->
+    <div class="theme-switch">
+      <div class="theme-switch__control">
+        <input
+          class="theme-switch__toggle"
+          type="checkbox"
+          name="theme"
+          id="theme-switch-toggle"
+          aria-label="Переключить между тёмной и светлой темой"
+        />
+        <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle"> </label>
+        <svg class="theme-switch__moon js-moon" aria-label="Иконка луны">
+          <use href="./images/sprite.svg#moon"></use>
+        </svg>
+        <svg class="theme-switch__sun js-sun" role="img" aria-label="Иконка солнца">
+          <use href="./images/sprite.svg#sun"></use>
+        </svg>
+      </div>
+    </div>
+    <!-- Дело рук Жени -->
   </div>
 </header>
