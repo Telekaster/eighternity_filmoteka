@@ -18,7 +18,7 @@ const options = {
   itemsPerPage: 9,
   visiblePages: 5,
   page: 1,
-  centerAlign: true,
+  centerAlign: false,
   template: {
     page: '<a href="#" class="tui-page-btn">{{page}}</a>',
     currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
