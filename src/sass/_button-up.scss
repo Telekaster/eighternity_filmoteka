@@ -16,13 +16,15 @@ justify-content: center;
     background-color: $genreColor;
     opacity: 0;
 
-    transition: opacity 500ms $transition-duration;
-
-    &:hover,
-    &:focus{
-        opacity: 1;
-    }
+    transition: opacity 500ms $transition-duration,
+   transform $timing-function $transition-duration ;
+      @media screen and(min-width: map-get($breakpoints, tablet)) {
+    &:hover{
+        transform: scale(1.2);
+    }    
+}
+  
 }
 .button_UP.show{
-    opacity:.5; 
+    opacity:.6;
 }
