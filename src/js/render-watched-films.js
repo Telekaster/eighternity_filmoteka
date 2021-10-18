@@ -1,17 +1,36 @@
 import refs from './refs.js';
+import { fetchMovieList } from './api';
 import { show, hide } from './spinner';
 import observeCards from './intersectionObserver.js';
-
-const { spinner, API_KEY, BASE_URL, btnLibOpen, btnHomeOpen,  watchedBtn, queueBtn, list, libClearTxt, loginButton } = refs();
-
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 
+const { spinner,
+    API_KEY,
+    BASE_URL,
+    btnLibOpen,
+    btnHomeOpen,
+    watchedBtn,
+    queueBtn,
+    list,
+    libClearTxt,
+    loginButton } = refs();
 
-function getUserData () {
-    const userName = loginButton.id;
-    const saveData = localStorage.getItem(userName);
-    return JSON.parse(saveData);
-}
+
+btnLibOpen.addEventListener('click', () => {
+    if (watchedBtn.classList.contains('current')) {
+        createWatchedPage()
+    } else if (queueBtn.classList.contains('current')) {
+        createQueuePage()
+    }
+});
+queueBtn.addEventListener('click', createQueuePageOnClickBtn);
+btnHomeOpen.addEventListener('click', async () => {
+    libClearTxt.textContent = '';
+    list.innerHTML = '';
+    fetchMovieList(1);
+});
+
 
 async function getFetch(url) {
     try {
@@ -22,49 +41,71 @@ async function getFetch(url) {
     return fetchedObj 
     } catch (error) {
         console.log(error.message);
-        //тут можна випливашку з меседжем повісити
+        Notify.warning('Ooops! Something goes wrong! Error: 404');
     }
 
 };
-
-//це не працює!!! не знаю чому!_____________________________
-function templateImgCheck(path) {
-            
-         const templateJpg = "./images/kamera-template.jpg"
-        const templateWebp = "./images/kamera-template.webp"
-        
-        if (path === null) {
-           return `${templateJpg}` 
-        } else {
-            return `https://image.tmdb.org/t/p/w500/${path}` 
-        }         
-}
-    
-//_______________________________________________________________
-
-
+function getUserData () {
+    const userName = loginButton.id;
+    const saveData = localStorage.getItem(userName);
+    return JSON.parse(saveData);
+};
 function createMarkup(data) {
    
-    const { poster_path, backdrop_path, name, vote_average, first_air_date, title, id } = data;
+    const { poster_path,
+        backdrop_path,
+        title,
+        id,
+        genres,
+       release_date
+    } = data;
 
-    
-    const templateSrc = templateImgCheck(poster_path);
-    const templateDataSrc = templateImgCheck(backdrop_path);
+    const generatedTitle = generateTitle(title);
+    const generatedGenres = generateGenres(genres);
+    const generatedDate = generateData(release_date)
     
                      return `
                 <li class="movies__item" >
                 <div class="movie__card">
-                <img class="movie__img" id=${id} src=${templateSrc} loading="lazy" 
-                alt="${title}" data-src = "${templateDataSrc}"/>
+                <img class="movie__img"
+                 id=${id} 
+                 src="https://image.tmdb.org/t/p/w500/${poster_path}"
+                 loading="lazy"
+                alt="${title}"
+                 data-src = "https://image.tmdb.org/t/p/w500/${backdrop_path}"/>
                 
                 <div class="movie__label">
-                <h3 class="movie__name">${title || name}</h3>
-                 <p class="movie__genre">Genre <span class="movie__year">${first_air_date}</span></p>
+                <h3 class="movie__name">${generatedTitle}</h3>
+                 <p class="movie__genre">
+                 ${generatedGenres}
+                 <span class="movie__year">${generatedDate}</span></p>
                 </div>
                 </div>
                 </li>`
-}
-
+};
+function generateTitle(title) {
+  if (title.length > 35) {
+    return title.slice(0, 35) + '...';
+   } return title;
+  
+};
+function generateGenres(genres) {
+    let genresId = genres.map(obj => {
+       return obj.name   
+  });
+  if (genresId.length > 2) {
+    return [genresId.slice(0, 2).join(', '), ' Other'];
+  }
+  if (genresId.length === 0) {
+    return 'No genres';
+  }
+  return genresId.join(', ');
+};
+function generateData(release_date) {
+  if (release_date) {
+    return release_date.slice(0, 4);
+    }  return 'No release date';
+};
 async function arrMarkupStrings(idArr) {
     show(spinner)
    
@@ -72,7 +113,7 @@ async function arrMarkupStrings(idArr) {
           let url = `${BASE_URL}/movie/${id}${API_KEY}&language=en-US`
            getFetch(url)
                .then((data) => {
-                  return createMarkup(data)
+                 return createMarkup(data)
                })
                
              .then((string) => {
@@ -84,14 +125,10 @@ async function arrMarkupStrings(idArr) {
                 
     });
    
-}
-
+};
 function createTxtForClearWindow(value) {
  libClearTxt.textContent = `Your ${value} list is clear. Here you can add your first movie! :)`
-}
-
-
-
+};
 async function createWatchedPage() {
     list.innerHTML = '';
     libClearTxt.textContent = '';
@@ -105,8 +142,7 @@ async function createWatchedPage() {
         arrMarkupStrings(filteredIdArr)
         observeCards(list); 
     }
-}
-  
+};
 async function createQueuePage() {
     list.innerHTML = '';
     libClearTxt.textContent = '';
@@ -121,9 +157,7 @@ async function createQueuePage() {
     }
 
 
-}
-
-
+};
 function createWatchedPageOnClickBtn() {
     watchedBtn.classList.add('current');
     queueBtn.classList.remove('current');
@@ -140,43 +174,7 @@ function createQueuePageOnClickBtn() {
 
 
     watchedBtn.addEventListener('click', createWatchedPageOnClickBtn)
-    }
+}
 
 
-btnLibOpen.addEventListener('click', () => {
-    if (watchedBtn.classList.contains('current')) {
-        createWatchedPage()
-    } else if(queueBtn.classList.contains('current')) {
-         createQueuePage()
-    }
-})
- 
-
-
- btnHomeOpen.addEventListener('click', async () => {
-    list.innerHTML = '';
-    
-    if (libClearTxt.textContent!==null) {
-      libClearTxt.innerText = '';
-      
-    }
-   
-    let url = BASE_URL + 'trending/all/day' + API_KEY;
-
-    
-    const response = await getFetch(url)
-    const data = await response.results
-  
-    await data.map(el => {
-     const result =  createMarkup(el)
-       
-        list.insertAdjacentHTML('beforeend', result)
-        observeCards(list);   
-        
-    })
-
-       
-})
-
-queueBtn.addEventListener('click', createQueuePageOnClickBtn)
 

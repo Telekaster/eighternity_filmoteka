@@ -8,7 +8,6 @@ html{
 *::before,
 *::after {
   box-sizing: border-box;
-  // outline: solid 1px tomato;
 }
 
 ul[class],
@@ -38,7 +37,15 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+//для придавлення футеру вниз:______________Маріна
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 }
+main{
+flex: 1 1;
+}
+//________________________________________________
 
 ul[class],
 ol[class] {
@@ -105,35 +112,6 @@ select {
   color: $txtColorDark;
   font-family: $mainFont;
 }
-
-// То что Олег добавлял раньше______________________
-// .container {
-//   margin: auto;
-// }
-
-// @media screen and (max-width: 767px) {
-//   .container {
-//     width: 320px;
-//     padding-left: 20px;
-//     padding-right: 20px;
-//   }
-// }
-
-// @media screen and (min-width: 768px) {
-//   .container {
-//     width: 768px;
-//     padding-left: 75px;
-//     padding-right: 75px;
-//   }
-// }
-
-// @media screen and (min-width: 1024px) {
-//   .container {
-//     width: 1024px;
-//     padding-left: 75px;
-//     padding-right: 75px;
-//   }
-// }
 
 .visually-hidden {
   position: absolute !important;

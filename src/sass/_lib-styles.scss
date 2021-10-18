@@ -1,6 +1,9 @@
-.lib-clear-txt{
-    font-size: 28px;
-    font-style: italic;
-text-align: center;
-color: $genreColor;
+.lib-clear-txt {
+  font-size: 28px;
+  font-style: italic;
+  text-align: center;
+  color: $genreColor;
+  @media screen and(max-width: map-get($breakpoints ,tablet )-1){
+    font-size: 20px;
+  }
 }
