@@ -1,8 +1,13 @@
 
-<div class="modal__img"><img class="modal__poster" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{original_title}}">
+<div class="modal__img">
+  {{#if poster_path}}
+  <img class="modal__poster" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{original_title}}">
+  {{else}}
+  <img class="modal__poster" src="https://www.kino-teatr.ru/static/images/no_poster.jpg" alt="{{original_title}}">
+  {{/if}}
 </div>
 <div class="modal__content">
-  <h2 class="modal__title">{{original_title}}</h2>
+  <h2 class="modal__title">{{title}}</h2>
   <ul class="movie__infolist">
     <li class="movie__infolist-item">
       <p>Vote/Votes</p><span class="vote">{{vote_average}}</span>
@@ -13,7 +18,7 @@
       <p>Popularity</p><span class="popularity">{{popularity}}</span>
     </li>
     <li class="movie__infolist-item">
-      <p>Original Title</p><span class="original-title">{{original_title}}</span>
+      <p>Original Title</p><span class="original-title">{{title}}</span>
     </li>
     <li class="movie__infolist-item">
       <p>Genre</p>
