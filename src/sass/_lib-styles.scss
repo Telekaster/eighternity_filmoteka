@@ -3,4 +3,7 @@
   font-style: italic;
   text-align: center;
   color: $genreColor;
+  @media screen and(max-width: map-get($breakpoints ,tablet )-1){
+    font-size: 20px;
+  }
 }

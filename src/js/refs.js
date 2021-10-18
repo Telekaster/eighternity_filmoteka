@@ -18,7 +18,6 @@ export default function refs() {
     libClearTxt: document.getElementById('libClearTxt'),
     BASE_URL: 'https://api.themoviedb.org/3/',
 
-    // Марина_______________________________________________
     // элементи хедера:
     headerMain: document.getElementById('headerMain'),
     headerLib: document.getElementById('headerLib'),
@@ -38,6 +37,8 @@ buttonUP: document.getElementById('buttonUP'),
     modalInfo: document.querySelector('.modal__info'),
     body: document.querySelector(`body`),
     moon: document.querySelector('.theme-switch__moon'),
-    sun: document.querySelector('.theme-switch__sun')
+    sun: document.querySelector('.theme-switch__sun'),
+    moonLibrary: document.querySelector('.js-moon'),
+    sunLibrary: document.querySelector('.js-sun')
   };
 }

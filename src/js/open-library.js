@@ -9,20 +9,6 @@ const {
 
 } = refs();
 
-// ====== простіша версія==========
-// btnLibOpen.addEventListener('click', openLibrary);
-// btnHomeOpen.addEventListener('click', openLibrary);
-
-// function openLibrary() {
-    // headerMain.classList.toggle('current');
-   // headerLib.classList.toggle('current');
-// }
-// ========================
-
-
-
-
-// ========симпатичніша версія==========
 btnLibOpen.addEventListener('click', 
 nextSlide   
  );
@@ -61,12 +47,4 @@ function prevSlide() {
         
     });
 }
-// =======================================================
 
-
-//скрытие пагинации в библиотеке
-// const pagination = document.getElementById('pagination')
-// console.log(pagination);
-
-// if (localStorage.length === 0 && ){
-// pagination.toggle.classList.add('.visually-hidden')}
