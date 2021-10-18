@@ -12,13 +12,16 @@
 }
 
 .movies {
-  display: grid;
-  width: 100%;
-  margin: 0 auto;
+  //   width: 100%;
+  //   margin: 0 auto;
 
   @media screen and (min-width: 640px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 294px);
+    grid-row-gap: 30px;
+    grid-column-gap: 10px;
+    align-items: center;
+    justify-content: center;
   }
 
   @media screen and (min-width: 1024px) {
@@ -31,6 +34,8 @@
 .movies__item {
   opacity: 0;
   transform: scale(0.5);
+  display: flex;
+  justify-content: center;
 }
 
 .movies__item.observe {
@@ -49,8 +54,11 @@
   font-family: $mainFont;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   background-color: $txtColorWhite;
+
+  height: 440px;
+  max-width: 280px;
 
   padding: 5px;
 
@@ -61,6 +69,9 @@
 
   @media screen and (min-width: 640px) {
     margin-bottom: 0;
+    margin-right: 0;
+    max-height: 440px;
+    max-width: 274px;
   }
 
   &:hover,
@@ -97,7 +108,7 @@
 .movie__img {
   //   width: 100%; //Маріна
   //   min-height: 396px; //Маріна
-  height: 100%; //Тарас
+  height: 398px; //Тарас
   //   ____________________________
   max-width: 100%; //Тарас
   //_______________________

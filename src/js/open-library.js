@@ -62,3 +62,11 @@ function prevSlide() {
     });
 }
 // =======================================================
+
+
+//скрытие пагинации в библиотеке
+// const pagination = document.getElementById('pagination')
+// console.log(pagination);
+
+// if (localStorage.length === 0 && ){
+// pagination.toggle.classList.add('.visually-hidden')}
