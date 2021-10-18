@@ -24,10 +24,13 @@
 
   @media screen and (min-width: 640px) {
     display: grid;
-    // grid-template-columns: repeat(2, 1fr);
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 30px;
+
+    grid-template-columns: repeat(2, 294px);
     grid-row-gap: 30px;
+    grid-column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+
   }
 
   @media screen and (min-width: 1024px) {
@@ -40,6 +43,8 @@
 .movies__item {
   opacity: 0;
   transform: scale(0.5);
+  display: flex;
+  justify-content: center;
 }
 
 .movies__item.observe {
@@ -56,11 +61,13 @@
   font-family: $mainFont;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   background-color: $txtColorWhite;
 
-  // height: 440px;
-  // max-width: 274px;
+
+  height: 440px;
+  max-width: 280px;
+
 
   padding: 5px;
 
@@ -76,8 +83,10 @@
   @media screen and (min-width: 640px) {
     margin-bottom: 0;
 
-    // max-height: 440px;
-    // max-width: 274px;
+    margin-right: 0;
+    max-height: 440px;
+    max-width: 274px;
+
   }
 
   &:hover,
@@ -109,14 +118,17 @@
 //Маріна вклинилась______
 
 .movie__img {
+
+  height: 398px; //Тарас
+
   background: url(../images/kamera-template.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  // height: 398px; //Тарас
-  //   ____________________________
+
+
   max-width: 100%; //Тарас
-  //_______________________
+ 
 
   border-radius: 7px;
   overflow: hidden;
