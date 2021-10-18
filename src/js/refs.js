@@ -18,7 +18,6 @@ export default function refs() {
     libClearTxt: document.getElementById('libClearTxt'),
     BASE_URL: 'https://api.themoviedb.org/3/',
 
-    // Марина_______________________________________________
     // элементи хедера:
     headerMain: document.getElementById('headerMain'),
     headerLib: document.getElementById('headerLib'),

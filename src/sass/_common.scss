@@ -2,23 +2,32 @@
 .movies__section {
   padding-top: 20px;
   padding-bottom: 40px;
-
+  //____________________________________Марина
+ min-height: calc(100vh - 410px);
+ //___________________________________
   @media screen and (min-width: 640px) {
     padding-top: 60px;
     padding-bottom: 60px;
 
-    min-height: calc(100vh - 70px);
+    // min-height: calc(100vh - 70px);
+    //____________________________________
+ //пропозиція великих змін від Марини! :)))
+   //дивись body: display:flex, column
+//___________________________________________
   }
 }
 
+
 .movies {
-  display: grid;
-  width: 100%;
-  margin: 0 auto;
+  //   width: 100%;
+  //   margin: 0 auto;
 
   @media screen and (min-width: 640px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
+    display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
   }
 
   @media screen and (min-width: 1024px) {
@@ -36,8 +45,6 @@
 .movies__item.observe {
   transform: scale(1);
   opacity: 1;
-  //   width: 274px;
-  //   height: 439px;
   transition: opacity linear 400ms, transform ease-in-out 400ms;
 }
 
@@ -52,15 +59,25 @@
   margin-bottom: 20px;
   background-color: $txtColorWhite;
 
+  // height: 440px;
+  // max-width: 274px;
+
   padding: 5px;
 
-  -webkit-transition: 500ms ease-in-out; /* Safari and Chrome */
-  -moz-transition: 500ms ease-in-out; /* Firefox 4 */
-  -o-transition: 500ms ease-in-out; /* Opera */
-  transition: 500ms ease-in-out; /* стандарт */
+  -webkit-transition: 500ms ease-in-out;
+  /* Safari and Chrome */
+  -moz-transition: 500ms ease-in-out;
+  /* Firefox 4 */
+  -o-transition: 500ms ease-in-out;
+  /* Opera */
+  transition: 500ms ease-in-out;
+  /* стандарт */
 
   @media screen and (min-width: 640px) {
     margin-bottom: 0;
+
+    // max-height: 440px;
+    // max-width: 274px;
   }
 
   &:hover,
@@ -88,16 +105,15 @@
     }
   }
 }
+
 //Маріна вклинилась______
-.movies__item .movie__img {
-  background: url(../images/kamera-template.jpg);
-  background-size: contain;
-}
 
 .movie__img {
-  //   width: 100%; //Маріна
-  //   min-height: 396px; //Маріна
-  height: 100%; //Тарас
+  background: url(../images/kamera-template.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  // height: 398px; //Тарас
   //   ____________________________
   max-width: 100%; //Тарас
   //_______________________
@@ -125,7 +141,7 @@
 }
 
 .movie__year::before {
-  content: '|';
+  content: ' | '; //Маріна - додала пробіли, щоб не клеїлись
   width: 1px;
   height: 11px;
   margin-right: 2px;
@@ -143,3 +159,6 @@
 .d-none {
   display: none !important;
 }
+
+
+

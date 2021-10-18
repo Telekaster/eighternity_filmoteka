@@ -1,30 +1,14 @@
-
-//оптимизировать картинки
-//кнопка log in должна быть активной при нажатии
-
-
-
-
 .header{
   width: 100%;
   position: relative;
-  overflow: hidden;
-
 }
-// .header__main.current{
-// display: block;
-// }
 .header__main {
   display: none;
   padding: 42px 0; 
 
   position: relative;
   animation: 0.3s ease-in-out;
-
-
-
-  // padding-top: 20px; //<------ Дело рук Олега
-  background-color: $txtColorDark;
+background-color: $txtColorDark;
   color: $txtColorWhite;
   min-height: 230px;
 
@@ -110,26 +94,20 @@
 }
 .nav {
   display: flex;
-  align-items: center; //<------ Дело рук Олега
+  align-items: center;
   width: 100%;
   
-  max-width: 180px; //<------ Дело рук Олега
+  max-width: 180px;
   justify-content: space-between;
   column-gap: 10px;
 }
 
-// Дело рук Олега-------------------
-.log_in__button {
- 
+.log_in__button { 
   @extend .btn;
  @extend .nav__btn;
-  // background: none;
 }
-// ------------------------------------
-
 .nav__btn {
   @extend .btn;
-  // padding: 10px 0;
   position: relative;
   color: $txtColorWhite;
   line-height: 1.17;
@@ -185,7 +163,6 @@
   width: 100%;
   background-color: transparent;
   border: none;
-  // word-break: normal;
   height: 20px;
   padding: 0;
   color: $txtColorWhite;
@@ -205,14 +182,6 @@
   width: 12px;
   height: 12px;
 }
-
-
-
-
-
-// .header-lib.current{
-//   display: block;
-// }
 
 .header-lib {
   display: none;
@@ -270,9 +239,6 @@
 .nav.nav--lib{
 max-width: 143px;
 }
-
-
-
 .header-lib__btn-set {
   display: flex;
   justify-content: center;
@@ -282,9 +248,6 @@ max-width: 143px;
     column-gap: 15px;
   }
 }
-
-
-
 .header-lib__btn {
   @extend .btn;
   margin-top: 49px;
@@ -338,24 +301,15 @@ max-width: 143px;
    box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6)); 
 }
 
-
-// .welcome__slide {
-//   display: none;
-//   position: relative;
-//   animation: 0.3s ease-in-out;
-// }
-
 .slide.active,
 .slide.next {
   display: block;
   width: 100%;
-  // height: 100%;
 }
 
 .slide.next {
   position: absolute;
   top: 0;
-  // width: 100%;
 }
 
 .to-left {

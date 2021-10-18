@@ -9,20 +9,6 @@ const {
 
 } = refs();
 
-// ====== простіша версія==========
-// btnLibOpen.addEventListener('click', openLibrary);
-// btnHomeOpen.addEventListener('click', openLibrary);
-
-// function openLibrary() {
-    // headerMain.classList.toggle('current');
-   // headerLib.classList.toggle('current');
-// }
-// ========================
-
-
-
-
-// ========симпатичніша версія==========
 btnLibOpen.addEventListener('click', 
 nextSlide   
  );
@@ -61,4 +47,4 @@ function prevSlide() {
         
     });
 }
-// =======================================================
+
