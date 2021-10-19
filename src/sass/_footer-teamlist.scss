@@ -19,7 +19,7 @@
 
     &:hover,
     &:focus {
-      fill: $lineColor;
+      fill: $genreColor;
     }
   }
   &__icon {
@@ -36,7 +36,8 @@
 .team {
   box-shadow: 30px;
   border-radius: 7px;
-  border-color: $lineColor;
+  background-color: $txtColorWhite;
+  border-color: $genreColor;
   border-style: solid;
   overflow: hidden;
 

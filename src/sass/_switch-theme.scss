@@ -116,14 +116,17 @@ body.dark-theme {
     background-color: $footer-text-color;
   }
   & .modal-footer {
-    background-color: $cardColorDark;
+    background-color: $footer-text-color;
     color: $footer-background-color;
+  }
+  & .team {
+    background-color: transparent;
   }
   & .network-list__link {
     fill: $footer-background-color;
   }
   & .network-list__link:hover {
-    fill: $lineColor;
+    fill: $genreColor;
   }
 }
 body.light-theme {
