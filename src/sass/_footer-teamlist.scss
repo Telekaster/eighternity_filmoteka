@@ -1,4 +1,4 @@
-//======================cociallinks==========================
+//======================sociallinks==========================
 .network-list {
   display: flex;
   justify-content: center;
@@ -36,6 +36,7 @@
 .team {
   box-shadow: 30px;
   border-radius: 7px;
+  background-color: $txtColorWhite;
   border-color: $genreColor;
   border-style: solid;
   overflow: hidden;
