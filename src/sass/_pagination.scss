@@ -6,31 +6,18 @@
  */
 @charset 'utf-8';
 
-.tui-pagination * {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  margin-top: 50px;
-}
-
 .tui-ico-ellipsis,
 .tui-ico-first,
 .tui-ico-last,
 .tui-ico-next,
 .tui-ico-prev {
   overflow: hidden;
-  // @extend .container;
 }
 
 .tui-pagination {
-  // height: 28px;
-  // margin: 14px 0 12px;
-  // margin: 45px 60px;
   margin: 0px 0px 40px 0px;
   line-height: normal;
   text-align: center;
-  // font-size: 0;
 }
 
 .tui-pagination .tui-page-btn {
@@ -63,7 +50,6 @@
   color: $txtColorWhite;
   background: $genreColor;
   border-radius: 5px;
-  // border-color: #fff;
   cursor: pointer;
 }
 
@@ -71,36 +57,12 @@
   background-color: #ec9f0f;
 }
 
-// .tui-pagination .tui-first-child.tui-is-selected,
-// .tui-pagination strong.tui-first-child {
-//   margin-left: 0
-// }
-
-// .tui-pagination .tui-first-child,
-// .tui-pagination .tui-prev-is-ellip {
-//   border-left: 1px solid #ddd
-// }
-
-// .tui-pagination .tui-last-child,
-// .tui-pagination .tui-next-is-ellip {
-//   border-right: 1px solid #ddd
-// }
-
-// .tui-pagination .tui-first-child.tui-is-selected {
-//   border-left: 1px solid #4b96e6
-// }
-
-// .tui-pagination .tui-last-child.tui-is-selected {
-//   border-right: 1px solid #4b96e6
-// }
-
 .tui-pagination .tui-first,
 .tui-pagination .tui-prev,
 .tui-pagination .tui-next,
 .tui-pagination .tui-last,
 .tui-pagination .tui-prev-is-ellip,
 .tui-pagination .tui-next-is-ellip {
-  overflow: hidden;
   width: 40px;
   height: 40px;
   padding: 13px 13px 11px 13px;
@@ -108,7 +70,6 @@
   line-height: 16px;
   white-space: nowrap;
   font-weight: bold;
-  // border: 1px solid #ddd;
 }
 
 .tui-pagination .tui-prev-is-ellip {
@@ -195,7 +156,7 @@
 }
 @media screen and (max-width: 767px) {
   .tui-pagination .tui-ico-ellip{
-  display: none;
+    display: inline-block;
   }
 }
 
@@ -236,12 +197,6 @@
   border: 0;
   outline: none;
 }
-
-
-// .tui-page-inputs .tui-page-current {
-//   color: #4b96e6
-// }
-
 
 .tui-page-separator {
   display: inline-block;

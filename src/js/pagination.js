@@ -11,7 +11,7 @@ import { fetchMovieList } from './api';
 
 const { list, spinner } = refs();
 
-const container = document.getElementById('pagination');
+export const container = document.getElementById('pagination');
 const options = {
   // below default value of options
   totalItems: 1000,
@@ -45,11 +45,6 @@ fetchMovieList(currentPage);
 pagination.on('beforeMove', event => {
   const currentPage = event.page;
 
-  // if (currentPage === 10) {
-  //   return false;
-  //   // return true;
-  // }
-  // TODO: Add API service to fetch next portion of films
   list.innerHTML = '';
   if (searchInput.children[0].value != '') {
     const query = searchInput.children[0].value;
