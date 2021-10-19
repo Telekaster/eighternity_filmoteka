@@ -29,7 +29,6 @@ function onBackdropClick(event) {
   if (event.currentTarget === event.target) {
     onCloseModal();
   }
-  console.log('кликнули по backdrop');
 }
 
 //===========================закрыть по ESС==========================
