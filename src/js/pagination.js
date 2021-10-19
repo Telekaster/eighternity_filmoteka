@@ -52,8 +52,6 @@ pagination.on('beforeMove', event => {
   } else {
     fetchMovieList(currentPage);
   }
-  
-  console.log('Move to: ', currentPage);
 });
 
 export default pagination;
