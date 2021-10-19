@@ -35,9 +35,10 @@
 
 .team {
   box-shadow: 30px;
-  border-radius: 3px;
+  border-radius: 7px;
   border-color: $lineColor;
   border-style: solid;
+  overflow: hidden;
 
   &__box-image:hover::before {
     opacity: 1;

@@ -22,9 +22,6 @@
   padding-left: 20px;
   padding-right: 20px;
 
-  overflow-y: auto;
-  justify-content: flex-start;
-  align-items: flex-start;
   position: absolute;
   max-height: 100%;
 
@@ -32,10 +29,10 @@
   left: 50%;
   color: $footer-text-color;
   padding: 20px;
-  border-radius: 3px;
+  border-radius: 7px;
   border-color: $lineColor;
   border-style: solid;
-  overflow-y: scroll;
+  overflow: scroll;
 
   background-color: $footer-background-color;
   transform: translate(-50%, -50%) scale(1);
@@ -54,7 +51,6 @@
     background-color: transparent;
     border: transparent;
     cursor: pointer;
-    // border-radius: 50%;
   }
   &__name-team {
     align-items: center;
@@ -66,12 +62,6 @@
   }
 }
 
-// @media screen and (min-width: 420px) and (max-width: 767px) {
-//   .modal-footer {
-
-//   }
-// }
-
 @media screen and (min-width: 768px) {
   .modal-footer {
     width: 100%;
@@ -80,5 +70,6 @@
 @media screen and (min-width: 1024px) {
   .modal-footer {
     max-width: 1024px;
+    overflow: hidden;
   }
 }
