@@ -30,7 +30,7 @@
   color: $footer-text-color;
   padding: 20px;
   border-radius: 7px;
-  border-color: $lineColor;
+  border-color: $genreColor;
   border-style: solid;
   overflow: scroll;
 
@@ -55,10 +55,10 @@
   &__name-team {
     align-items: center;
     text-align: center;
-    color: $lineColor;
+    color: $genreColor;
   }
   &__icon-close {
-    fill: $lineColor;
+    fill: $genreColor;
   }
 }
 
