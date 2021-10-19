@@ -3,7 +3,7 @@ import { fetchMovieList } from './api';
 import { show, hide } from './spinner';
 import observeCards from './intersectionObserver.js';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
+import { container } from './pagination';
 
 const { spinner,
     API_KEY,
@@ -23,12 +23,21 @@ btnLibOpen.addEventListener('click', () => {
     } else if (queueBtn.classList.contains('current')) {
         createQueuePage()
     }
+    // Юля
+    container.classList.add('d-none'); 
+    // ______________
 });
+
 queueBtn.addEventListener('click', createQueuePageOnClickBtn);
+
 btnHomeOpen.addEventListener('click', async () => {
     libClearTxt.textContent = '';
     list.innerHTML = '';
     fetchMovieList(1);
+
+    // Юля_________
+    container.classList.remove('d-none');
+    // ____________
 });
 
 
@@ -45,6 +54,8 @@ async function getFetch(url) {
     }
 
 };
+// TODO: виправити ситуацію, коли локальне хранилище очищене користувачем 
+// потрібно автоматично робити LOG OUT вихід із системи, тому що console.log викидає помилку
 function getUserData () {
     const userName = loginButton.id;
     const saveData = localStorage.getItem(userName);

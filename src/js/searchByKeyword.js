@@ -25,10 +25,10 @@ export function getMoviesByQuery(query, page = 1) {
     .then(data => {
       if (data.results.length === 0) {
         Notify.warning('По вашему запросу ничего не найдено');
-        fetchMovieList((page = 1));
+        fetchMovieList(1);
+        return;
       }
 
-      pagination.reset();
       const foundResults = data.total_results;
       const totalPages = data.total_pages;
       pagination.setTotalItems(foundResults);
@@ -100,6 +100,7 @@ const onSubmit = event => {
   console.log('поиск', query);
 
   if (query !== '') {
+    pagination.reset();
     getMoviesByQuery(query);
   } else {
     Notify.info('Введите запрос');
