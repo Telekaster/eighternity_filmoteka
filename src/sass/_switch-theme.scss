@@ -15,11 +15,34 @@
     top: 112px;
     right: 120px;
   }
-  @media screen and (max-width: 767px) {
-    display: none;
+  @media screen and (max-width: 450px) {
+    position: absolute;
+    top: 105px;
+    right: 15px;
+  }
+  @media screen and (min-width: 450px) and (max-width: 767.99px){
+    position: absolute;
+    top: 115px;
+    right: 30px;
   }
 }
-
+.theme-switch-library{
+  @media screen and (max-width: 450px) {
+    position: absolute;
+    top: 190px;
+    right: 23px;
+  }
+  @media screen and (min-width: 450px) and (max-width: 767.99px){
+    position: absolute;
+    top: 196px;
+    right: 23px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1099.9px) {
+    position: absolute;
+    top: 196px;
+    right: 23px;
+  }
+}
 .theme-switch__sun {
   position: absolute;
   top: -1px;
