@@ -4,7 +4,6 @@ export default function submitByEnter(loginButton, button, evt, nameValue, login
         
             if (evt.key === 'Enter') {
                 evt.preventDefault();
-                // console.log('ENTER');
                 sendLogin(nameValue, loginInput, user, greetingText, loginWindow, search, loginButton, btnLibOpen);
             };
         };
