@@ -158,6 +158,9 @@ background-color: $txtColorDark;
   display: flex;
   align-items: flex-start;
   border-bottom: solid 0.5px white;
+  @media screen and (max-width: 767px) {
+    width: 50%;
+  }
 }
 .search__input {
   width: 100%;
