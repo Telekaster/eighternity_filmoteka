@@ -18,33 +18,16 @@ function fetchMovieList(page) {
     .then(resp => resp.json())
     .then(data => data.results)
     .then(array => {
-    //   console.log(array);
+
       let result = array
         .map(elem => {
-          // console.log('Result:', elem)
+
           const {
             poster_path,
             backdrop_path,
-            name,
-            vote_average, //можно удалить
-            first_air_date, //можно удалить
-            title, //можно удалить
-            id,
-            genre_ids, //можно удалить
+            id,          
           } = elem;
-        //   const getUserById = function (arr, id) {
-        //     let res = arr.find(x => x.id === id);
 
-        //     if (res === undefined) {
-        //       return 0;
-        //     } else {
-        //       return { ...res };
-        //     }
-        //   };
-
-          // console.log(...genre_ids)
-          // console.log(getUserById(genres, ...genre_ids).name);
-          // console.log(getUserById(genres, genre_ids[0, 1]).name);
 
           return `
                 <li class="movies__item" >

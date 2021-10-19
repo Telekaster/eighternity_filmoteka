@@ -1,5 +1,3 @@
-// import filmCards from '../templates/film-keyword.hbs';
-// import genres from '../data/genres_id.json';
 import { generateTitle, generateGenres, generateData } from './function';
 import { fetchMovieList } from './api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -24,7 +22,7 @@ export function getMoviesByQuery(query, page = 1) {
     .then(response => response.json())
     .then(data => {
       if (data.results.length === 0) {
-        Notify.warning('По вашему запросу ничего не найдено');
+        Notify.warning('No result for your request');
         fetchMovieList(1);
         return;
       }
@@ -37,7 +35,6 @@ export function getMoviesByQuery(query, page = 1) {
       return data.results;
     })
     .then(array => {
-      console.log(array);
 
       let result = array
         .map(elem => {
@@ -63,13 +60,13 @@ export function getMoviesByQuery(query, page = 1) {
               </div>
             </li>`;
           } else {
-            // console.log('есть результат без постера');
+
             return `<li class='movies__item'>
               <div class='movie__card'>
                 <img
                   class='movie__img' 
                   id=${id}
-                  src='https://www.kino-teatr.ru/static/images/no_poster.jpg'
+                  src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP8n_VcmefHmHxO3n9bXSMODS_8pGjmKKGbA&usqp=CAU'
                   loading='lazy'
                   alt='${original_title}'
                   data-src="https://image.tmdb.org/t/p/w500/${backdrop_path}"
@@ -97,13 +94,12 @@ const onSubmit = event => {
   event.preventDefault();
 
   query = event.currentTarget.elements.query.value.trim();
-  console.log('поиск', query);
 
   if (query !== '') {
     pagination.reset();
     getMoviesByQuery(query);
   } else {
-    Notify.info('Введите запрос');
+    Notify.info('Enter your request');
     searchInput.reset();
     return;
   }
