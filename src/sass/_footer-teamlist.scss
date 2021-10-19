@@ -40,6 +40,7 @@
   border-color: $genreColor;
   border-style: solid;
   overflow: hidden;
+  background-image: linear-gradient(to top, $footer-background-color, $genreColor);
 
   &__box-image:hover::before {
     opacity: 1;
