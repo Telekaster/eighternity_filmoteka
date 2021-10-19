@@ -116,11 +116,11 @@ body.dark-theme {
     background-color: $footer-text-color;
   }
   & .modal-footer {
-    background-color: $cardColorDark;
+    background-color: $footer-text-color;
     color: $footer-background-color;
   }
   & .team {
-    background-color: $footer-text-color;
+    background-color: $cardColorDark;
   }
   & .network-list__link {
     fill: $footer-background-color;
