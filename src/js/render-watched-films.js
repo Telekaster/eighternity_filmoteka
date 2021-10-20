@@ -137,7 +137,7 @@ async function arrMarkupStrings(idArr) {
    
 };
 function createTxtForClearWindow(value) {
- libClearTxt.textContent = `Your ${value} list is clear. Here you  will see your movies collection. :)`
+ libClearTxt.textContent = `Your ${value} list is clear. Here you  will see your movies collection :)`
 };
 async function createWatchedPage() {
     list.innerHTML = '';
