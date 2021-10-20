@@ -38,13 +38,7 @@
 
   @media screen and (max-width: 767px) {
     display: inline;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .tui-page-btn .tui-first,
-  .tui-page-btn .tui-last {
-  display: none;
+    padding: 10px 10px 10px 10px;
   }
 }
 
@@ -131,12 +125,6 @@
   background-position: 0px 0px;
 }
 
-@media screen and (max-width: 767px) {
-  .tui-pagination .tui-ico-first{
-  display: none;
-  }
-}
-
 .tui-pagination .tui-ico-prev {
   width: 8px;
   height: 12px;
@@ -155,11 +143,6 @@
   height: 10px;
   background-position: 0px -12px;
 }
-  @media screen and (max-width: 767px) {
-    .tui-pagination .tui-ico-last{
-    display: none;
-  }
- }
 
 .tui-pagination .tui-ico-ellip {
   width: 10px;
