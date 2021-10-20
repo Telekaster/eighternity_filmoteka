@@ -18,26 +18,24 @@ const { spinner,
 
 
 btnLibOpen.addEventListener('click', () => {
-    if (watchedBtn.classList.contains('current')) {
-        createWatchedPage()
-    } else if (queueBtn.classList.contains('current')) {
-        createQueuePage()
-    }
-    // Юля
-    container.classList.add('d-none'); 
-    // ______________
-});
+        if (watchedBtn.classList.contains('current')) {
+            createWatchedPage()
+        } else if (queueBtn.classList.contains('current')) {
+            createQueuePage()
+        }
+  
+        container.classList.add('d-none');    
+ 
+}); 
 
 queueBtn.addEventListener('click', createQueuePageOnClickBtn);
 
 btnHomeOpen.addEventListener('click', async () => {
-    libClearTxt.textContent = '';
+ 
+     libClearTxt.textContent = '';
     list.innerHTML = '';
-    fetchMovieList(1);
-
-    // Юля_________
+    fetchMovieList(1); 
     container.classList.remove('d-none');
-    // ____________
 });
 
 
@@ -54,12 +52,13 @@ async function getFetch(url) {
     }
 
 };
-// TODO: виправити ситуацію, коли локальне хранилище очищене користувачем 
-// потрібно автоматично робити LOG OUT вихід із системи, тому що console.log викидає помилку
-function getUserData () {
-    const userName = loginButton.id;
-    const saveData = localStorage.getItem(userName);
-    return JSON.parse(saveData);
+
+function getUserData() {
+    
+    const userName = loginButton.id;  
+        const saveData = localStorage.getItem(userName);
+        return JSON.parse(saveData);       
+
 };
 function createMarkup(data) {
    
@@ -138,13 +137,15 @@ async function arrMarkupStrings(idArr) {
    
 };
 function createTxtForClearWindow(value) {
- libClearTxt.textContent = `Your ${value} list is clear. Here you can add your first movie! :)`
+ libClearTxt.textContent = `Your ${value} list is clear. Here you  will see your movies collection :)`
 };
 async function createWatchedPage() {
     list.innerHTML = '';
     libClearTxt.textContent = '';
     const idArr = getUserData().watched;
- const filteredIdArr =  idArr.filter(id=>id!==0)
+    
+        
+    const filteredIdArr =  idArr.filter(id=>id!==0)
 
   
     if (filteredIdArr.length === 0) {
@@ -152,7 +153,8 @@ async function createWatchedPage() {
     } else {
         arrMarkupStrings(filteredIdArr)
         observeCards(list); 
-    }
+        }
+    
 };
 async function createQueuePage() {
     list.innerHTML = '';
@@ -167,23 +169,17 @@ async function createQueuePage() {
         observeCards(list); 
     }
 
-
 };
 function createWatchedPageOnClickBtn() {
     watchedBtn.classList.add('current');
     queueBtn.classList.remove('current');
     createWatchedPage()
-
-
     watchedBtn.removeEventListener('click', createWatchedPageOnClickBtn)
 }
 function createQueuePageOnClickBtn() {
     createQueuePage()
         watchedBtn.classList.remove('current');
-        queueBtn.classList.add('current');
-    
-
-
+        queueBtn.classList.add('current');    
     watchedBtn.addEventListener('click', createWatchedPageOnClickBtn)
 }
 

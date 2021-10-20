@@ -1,27 +1,18 @@
-//===================MOVIES======================
 .movies__section {
   padding-top: 20px;
   padding-bottom: 40px;
-  //____________________________________Марина
+
  min-height: calc(100vh - 410px);
- //___________________________________
+
   @media screen and (min-width: 640px) {
     padding-top: 60px;
     padding-bottom: 60px;
 
-    // min-height: calc(100vh - 70px);
-    //____________________________________
- //пропозиція великих змін від Марини! :)))
-   //дивись body: display:flex, column
-//___________________________________________
   }
 }
 
 
 .movies {
-  //   width: 100%;
-  //   margin: 0 auto;
-
   @media screen and (min-width: 640px) {
     display: grid;
 
@@ -39,7 +30,6 @@
   }
 }
 
-///________________Маріна
 .movies__item {
   opacity: 0;
   transform: scale(0.5);
@@ -53,9 +43,6 @@
   transition: opacity linear 400ms, transform ease-in-out 400ms;
 }
 
-///____________________________________
-
-//===============FONTS================
 .movie__card {
   border-radius: 7px;
   font-family: $mainFont;
@@ -72,13 +59,13 @@
   padding: 5px;
 
   -webkit-transition: 500ms ease-in-out;
-  /* Safari and Chrome */
+
   -moz-transition: 500ms ease-in-out;
-  /* Firefox 4 */
+
   -o-transition: 500ms ease-in-out;
-  /* Opera */
+
   transition: 500ms ease-in-out;
-  /* стандарт */
+  
 
   @media screen and (min-width: 640px) {
     margin-bottom: 0;
@@ -115,26 +102,20 @@
   }
 }
 
-//Маріна вклинилась______
-
 .movie__img {
 
-  height: 398px; //Тарас
+  height: 398px;
 
   background: url(../images/kamera-template.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 
-
-  max-width: 100%; //Тарас
+ max-width: 100%; 
  
-
   border-radius: 7px;
   overflow: hidden;
-  //   max-height: 398px; //если пытаюсь зафиксировать высоту для выравнивания всех карточек,
-  //   object-fit: cover; //то некорректно расширяет изображения на планшете и мобиле
-}
+ }
 
 .movie__name {
   color: $txtColorDark;
@@ -153,7 +134,7 @@
 }
 
 .movie__year::before {
-  content: ' | '; //Маріна - додала пробіли, щоб не клеїлись
+  content: ' | '; 
   width: 1px;
   height: 11px;
   margin-right: 2px;
