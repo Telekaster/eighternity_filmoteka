@@ -12,7 +12,6 @@ let config = {
 };
 const animationHaert = new LazyLinePainter(heart, config);
 animationHaert.paint();
-// logo animation
 
 let myAnimation = new LazyLinePainter(filmLogo, {
   ease: 'easeLinear',
