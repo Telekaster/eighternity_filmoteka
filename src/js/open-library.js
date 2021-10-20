@@ -1,12 +1,10 @@
 import refs from './refs.js';
 
 const {
-
     btnHomeOpen,
     btnLibOpen,
     headerMain,
     headerLib,
-
 } = refs();
 
 btnLibOpen.addEventListener('click', 
@@ -16,8 +14,7 @@ btnHomeOpen.addEventListener('click', prevSlide);
 function nextSlide() {
     
      headerMain.classList.add('to-left');
-    headerMain.addEventListener('animationend', function () {
-        
+    headerMain.addEventListener('animationend', function () {        
         this.classList.remove('active', 'to-left' );
 
     });
@@ -28,14 +25,12 @@ function nextSlide() {
         this.classList.add('active');
         
     });
-
      }
 function prevSlide() {
     
         headerLib.classList.add('to-right');
     headerLib.addEventListener('animationend', function () {
     this.classList.remove('active','to-right');
-
     });
 
 
@@ -43,8 +38,7 @@ function prevSlide() {
  headerMain.classList.add('next', 'from-left');
    headerMain.addEventListener('animationend', function () {
         this.classList.remove('next', 'from-left');
-        this.classList.add('active');
-        
+        this.classList.add('active');        
     });
 }
 
