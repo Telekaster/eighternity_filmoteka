@@ -58,10 +58,10 @@ body {
     color: $genreColor;
   }
   @media screen and (max-width: 767px) {
-    font-size: 14px; //только в моб.версии
-    line-height: 1.14; //только в моб.версии
+    font-size: 14px;
+    line-height: 1.14;
     &__rights {
-      margin-bottom: 10px; //только в моб.версии
+      margin-bottom: 10px;
     }
   }
   @media screen and (min-width: 768px) {

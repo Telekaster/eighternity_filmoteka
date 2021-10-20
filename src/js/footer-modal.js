@@ -4,24 +4,18 @@ const backdrop = document.querySelector('[data-backdrop]');
 
 openModalBtn.addEventListener('click', onOpenModal);
 
-//========================открыть модалку  ========================================
-
 function onOpenModal() {
-  window.addEventListener('keydown', onEscClick); //для Esc
+  window.addEventListener('keydown', onEscClick);
   backdrop.classList.remove('is-hidden');
   document.body.classList.add('no-scroll');
 }
 
-// ========================закрыть модалку нажатием по иконке ========================================
-
 closeModalBtn.addEventListener('click', onCloseModal);
 function onCloseModal() {
-  window.removeEventListener('keydown', onEscClick); //для Esc
+  window.removeEventListener('keydown', onEscClick);
   backdrop.classList.add('is-hidden');
   document.body.classList.remove('no-scroll');
 }
-
-//  ==============================закрыть по backdrop====================
 
 backdrop.addEventListener('click', onBackdropClick);
 
@@ -30,8 +24,6 @@ function onBackdropClick(event) {
     onCloseModal();
   }
 }
-
-//===========================закрыть по ESС==========================
 
 function onEscClick(event) {
   const ESC_KEY_CODE = 'Escape';
