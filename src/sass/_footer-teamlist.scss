@@ -1,4 +1,3 @@
-//======================sociallinks==========================
 .network-list {
   display: flex;
   justify-content: center;
@@ -27,11 +26,6 @@
     height: 40px;
   }
 }
-//
-//
-//
-//
-/* team */
 
 .team {
   box-shadow: 30px;
@@ -113,7 +107,6 @@
 .team:hover .team__position {
   opacity: 1;
 }
-// ==========
 
 @media screen and (max-width: 419px) {
   .team-container img {
